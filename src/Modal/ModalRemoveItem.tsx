@@ -9,6 +9,7 @@ import { ModalText } from "./ModalText";
 import { ModalFooter } from "./ModalFooter";
 import { tasksRemoved, tasksClearedCategories } from "../features/tasksSlice";
 import { categoriesRemoved } from "../features/categoriesSlice";
+import React from "react";
 
 interface ModalRemoveItemProps {
   item: {

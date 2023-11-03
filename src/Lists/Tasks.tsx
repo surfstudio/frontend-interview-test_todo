@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 /* APPLICATION */
 import { ListItem } from "./ListItem";
 import { selectAllTasks } from "../features/tasksSlice";
+import React from "react";
 
 export const Tasks: React.FC = () => {
   const tasks = useSelector(selectAllTasks);

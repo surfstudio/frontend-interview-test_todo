@@ -1,3 +1,6 @@
+/* VENDOR */
+import React from "react";
+
 interface ModalTextProps {
   text: string;
 }

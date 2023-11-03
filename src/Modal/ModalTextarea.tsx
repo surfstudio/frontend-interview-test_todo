@@ -1,3 +1,6 @@
+/* VENDOR */
+import React from "react";
+
 interface ModalTextareaProps {
   description: string;
   setDescription: React.Dispatch<React.SetStateAction<string>>;

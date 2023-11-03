@@ -1,3 +1,7 @@
+/* VENDOR */
+import React from "react";
+
+/* APPLICATION */
 import important from "../icons/important.svg";
 
 interface ModalInputProps {

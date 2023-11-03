@@ -1,3 +1,7 @@
+/* VENDOR */
+import React from "react";
+
+/* APPLICATION */
 import close from "../icons/close.svg";
 
 interface ModalHeaderProps {

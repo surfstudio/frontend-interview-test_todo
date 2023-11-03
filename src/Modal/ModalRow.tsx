@@ -1,5 +1,6 @@
 import { ModalInput } from "./ModalInput";
 import { ModalDropdown } from "./ModalDropdown";
+import React from "react";
 
 interface ModalRowProps {
   name: string;

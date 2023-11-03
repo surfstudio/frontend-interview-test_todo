@@ -1,4 +1,9 @@
+/* VENDOR */
+import React from "react";
+
+/* APPLICATION */
 import { ModalBtn } from "./ModalBtn";
+
 
 interface ModalFooterProps {
   clearState?(): void;

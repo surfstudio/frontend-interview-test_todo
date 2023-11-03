@@ -1,3 +1,7 @@
+/* VENDOR */
+import React from "react";
+
+/* APPLICATION */
 import "./ModalBtn.css";
 
 interface ModalBtnProps {
