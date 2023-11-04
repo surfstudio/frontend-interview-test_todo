@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
 /* APPLICATION */
-import { RootState } from '../app/store';
+import { RootState } from './store';
 
 export interface CategoriesState {
 	id: string;
@@ -54,7 +54,7 @@ export const tasksSlice = createSlice({
 			}
 		},
 		tasksRemoved: (state, action) => {
-			let rm = (el: CategoriesState, i: number, arr: CategoriesState[]) =>
+			const rm = (el: CategoriesState, i: number, arr: CategoriesState[]) =>
 					el.id === action.payload,
 				rmTaskIndex = state.findIndex(rm);
 
