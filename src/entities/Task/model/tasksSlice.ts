@@ -46,7 +46,7 @@ export const tasksSlice = createSlice({
       }
     },
     tasksRemoved: (state, action) => {
-      let rm = (el: Task, i: number, arr: Task[]) =>
+      let rm = (el: Task) =>
           el.id === action.payload,
         rmTaskIndex = state.findIndex(rm);
 

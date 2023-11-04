@@ -46,7 +46,7 @@ export const categoriesSlice = createSlice({
             state: Category[],
             action: PayloadAction<string>
         ) => {
-            let rm = (el: Category, i: number, arr: Category[]) =>
+            let rm = (el: Category) =>
                     el.id === action.payload,
                 rmTaskIndex = state.findIndex(rm);
 
