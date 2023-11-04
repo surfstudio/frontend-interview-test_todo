@@ -1,5 +1,5 @@
 /* VENDOR */
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../hooks/hooks';
 import { useLocation } from 'react-router-dom';
 
 /* APPLICATION */
@@ -26,7 +26,7 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
 	active,
 	setActive,
 }) => {
-	const dispatch = useDispatch(),
+	const dispatch = useAppDispatch(),
 		{ pathname } = useLocation(),
 		isCategories = pathname.includes('categories'),
 		text = `Вы уверены, что хотите удалить задачу "${item.name}"?`;

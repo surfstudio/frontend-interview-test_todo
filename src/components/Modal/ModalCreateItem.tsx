@@ -1,6 +1,6 @@
 /* VENDOR */
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from '../../hooks/hooks';
 import { useLocation } from 'react-router-dom';
 
 /* APPLICATION */
@@ -22,7 +22,7 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 	active,
 	setActive,
 }) => {
-	const dispatch = useDispatch(),
+	const dispatch = useAppDispatch(),
 		{ pathname } = useLocation(),
 		isCategories = pathname.includes('categories'),
 		[name, setName] = useState(''),

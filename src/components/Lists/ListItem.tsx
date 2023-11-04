@@ -1,6 +1,6 @@
 /* VENDOR */
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from '../../hooks/hooks';
 
 /* APPLICATION */
 import edit from '../../assets/images/edit.svg';
@@ -19,7 +19,7 @@ interface ListItemProps {
 }
 
 export const ListItem: React.FC<ListItemProps> = ({ item }) => {
-	const categories = useSelector(selectAllCategories);
+	const categories = useAppSelector(selectAllCategories);
 	const [editModalActive, setEditModalActive] = useState(false);
 	const [removeModalActive, setRemoveModalActive] = useState(false);
 
