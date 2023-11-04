@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 /* APPLICATION */
 import { RootState } from './store';
-import type { CategoriesState, CategoriesStateNoId } from './types';
+import type { CategoriesState } from './types';
 
 const initialState: CategoriesState[] = [
 	{
@@ -30,7 +30,7 @@ export const categoriesSlice = createSlice({
 	reducers: {
 		categoriesAdded: (
 			state: CategoriesState[],
-			action: PayloadAction<CategoriesStateNoId>
+			action: PayloadAction<CategoriesState>
 		) => {
 			state.push({
 				id: uuidv4(),

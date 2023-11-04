@@ -1,7 +1,9 @@
 export interface CategoriesState {
-	id: string;
+	id?: string;
 	name: string;
 	description: string;
 }
 
-export type CategoriesStateNoId = Omit<CategoriesState, 'id'>;
+export interface CategoriesStateWithCategory extends CategoriesState {
+	category: string;
+}
