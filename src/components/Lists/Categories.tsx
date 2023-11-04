@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 /* APPLICATION */
 import { ListItem } from './ListItem';
-import { selectAllCategories } from '../store/categoriesSlice';
+import { selectAllCategories } from '../../store/categoriesSlice';
 
 export const Categories = () => {
 	const categories = useSelector(selectAllCategories);
