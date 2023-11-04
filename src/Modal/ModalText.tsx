@@ -1,7 +1,7 @@
 interface ModalTextProps {
-  text: string;
+	text: string;
 }
 
 export const ModalText: React.FC<ModalTextProps> = ({ text }) => {
-  return <p className="modal__content-text">{text}</p>;
+	return <p className="modal__content-text">{text}</p>;
 };
