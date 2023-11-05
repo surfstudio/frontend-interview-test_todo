@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import App from './components/App/App';
 //import reportWebVitals from './reportWebVitals';
+import 'normalize.css';
 import './index.css';
 
 const container = document.getElementById('root');
