@@ -37,14 +37,12 @@ export const tasksSlice = createSlice({
 			state: CategoriesStateWithCategory[],
 			action: PayloadAction<string>
 		) => {
-			const rm = (
-					el: CategoriesStateWithCategory,
-					i: number,
-					arr: CategoriesStateWithCategory[]
-				) => el.id === action.payload,
-				rmTaskIndex = state.findIndex(rm);
+			const id = action.payload;
+			const categoryIndexToRemove = state.findIndex((category) => category.id === id);
 
-			state.splice(rmTaskIndex, 1);
+			if (categoryIndexToRemove !== -1) {
+				state.splice(categoryIndexToRemove, 1);
+			}
 		},
 		tasksClearedCategories: (state, action) => {
 			state.forEach((task) => {
