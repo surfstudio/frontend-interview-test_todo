@@ -6,7 +6,11 @@ interface ModalInputProps {
 	size?: string;
 }
 
-export const ModalInput: React.FC<ModalInputProps> = ({ name, setName, size }) => {
+export const ModalInput: React.FC<ModalInputProps> = ({
+	name,
+	setName,
+	size,
+}: ModalInputProps) => {
 	return (
 		<div className={size === 'large' ? 'modalinput-wrapper large' : 'modalinput-wrapper'}>
 			<input

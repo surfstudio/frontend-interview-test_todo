@@ -21,7 +21,7 @@ interface ModalCreateItemProps {
 export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 	active,
 	setActive,
-}) => {
+}: ModalCreateItemProps) => {
 	const dispatch = useAppDispatch();
 	const isCategories = useCheckPath();
 	const [name, setName] = useState('');

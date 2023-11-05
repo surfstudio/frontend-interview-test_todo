@@ -1,4 +1,5 @@
 import './ModalBtn.css';
+import clsx from 'clsx';
 
 interface ModalBtnProps {
 	type?: string;
@@ -7,13 +8,19 @@ interface ModalBtnProps {
 	onClick: () => void;
 }
 
-export const ModalBtn: React.FC<ModalBtnProps> = ({ type, children, size, onClick }) => {
-	const btnClass =
-		type === 'primary'
-			? size === 'large'
-				? 'modalbtn primary large'
-				: 'modalbtn primary'
-			: 'modalbtn';
+export const ModalBtn: React.FC<ModalBtnProps> = ({
+	type,
+	children,
+	size,
+	onClick,
+}: ModalBtnProps) => {
+	const btnClass = clsx(
+		'modalbtn',
+		{
+			large: size === 'large',
+		},
+		{ primary: type === 'primary' }
+	);
 	return (
 		<button className={btnClass} onClick={onClick}>
 			{children}

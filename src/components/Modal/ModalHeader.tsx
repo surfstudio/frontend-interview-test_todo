@@ -10,7 +10,7 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
 	clearState,
 	title,
 	setActive,
-}) => {
+}: ModalHeaderProps) => {
 	return (
 		<header className="modal__content-header">
 			<h4 className="modal__content-title">{title}</h4>

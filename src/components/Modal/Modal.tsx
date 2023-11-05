@@ -1,5 +1,6 @@
 /* VENDOR */
 import React from 'react';
+import clsx from 'clsx';
 
 /* APPLICATION */
 import './Modal.css';
@@ -22,10 +23,10 @@ export const Modal: React.FC<ModalProps> = ({
 	active,
 	setActive,
 	children,
-}) => {
+}: ModalProps) => {
 	return (
 		<div
-			className={active ? 'modal active' : 'modal'}
+			className={clsx('modal', { modal_active: active })}
 			onClick={() => {
 				clearState && clearState();
 				setActive(false);
