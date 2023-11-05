@@ -13,7 +13,7 @@ export const tasksSlice = createSlice({
 	reducers: {
 		tasksAdded: (
 			state: CategoriesStateWithCategory[],
-			action: PayloadAction<CategoriesStateWithCategory>
+			action: PayloadAction<Omit<CategoriesStateWithCategory, 'id'>>
 		) => {
 			state.push({
 				id: uuidv4(),
@@ -47,7 +47,7 @@ export const tasksSlice = createSlice({
 			state.splice(rmTaskIndex, 1);
 		},
 		tasksClearedCategories: (state, action) => {
-			state.map((task) => {
+			state.forEach((task) => {
 				if (task.category === action.payload) task.category = '';
 			});
 		},

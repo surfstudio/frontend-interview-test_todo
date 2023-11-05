@@ -30,7 +30,7 @@ export const categoriesSlice = createSlice({
 	reducers: {
 		categoriesAdded: (
 			state: CategoriesState[],
-			action: PayloadAction<CategoriesState>
+			action: PayloadAction<Omit<CategoriesState, 'id'>>
 		) => {
 			state.push({
 				id: uuidv4(),
@@ -49,12 +49,16 @@ export const categoriesSlice = createSlice({
 				existingCategory.description = description;
 			}
 		},
-		categoriesRemoved: (state: CategoriesState[], action: PayloadAction<string>) => {
-			const rm = (el: CategoriesState, i: number, arr: CategoriesState[]) =>
-					el.id === action.payload,
-				rmTaskIndex = state.findIndex(rm);
+		categoriesRemoved: (
+			state: CategoriesState[],
+			action: PayloadAction<Pick<CategoriesState, 'id'>>
+		) => {
+			const { id } = action.payload;
+			const taskIndexToRemove = state.findIndex((category) => category.id === id);
 
-			state.splice(rmTaskIndex, 1);
+			if (taskIndexToRemove !== -1) {
+				state.splice(taskIndexToRemove, 1);
+			}
 		},
 	},
 });
