@@ -1,9 +1,9 @@
 /* VENDOR */
-import { useAppSelector } from '../../hooks/hooks';
 
 /* APPLICATION */
-import { ListItem } from './ListItem';
 import { selectAllTasks } from '../../store/tasksSlice';
+import { useAppSelector } from '../../hooks/hooks';
+import { ListItem } from './ListItem';
 
 export const Tasks: React.FC = () => {
 	const tasks = useAppSelector(selectAllTasks);

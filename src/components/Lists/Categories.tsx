@@ -1,9 +1,9 @@
 /* VENDOR */
-import { useAppSelector } from '../../hooks/hooks';
 
 /* APPLICATION */
-import { ListItem } from './ListItem';
 import { selectAllCategories } from '../../store/categoriesSlice';
+import { useAppSelector } from '../../hooks/hooks';
+import { ListItem } from './ListItem';
 
 export const Categories = () => {
 	const categories = useAppSelector(selectAllCategories);
