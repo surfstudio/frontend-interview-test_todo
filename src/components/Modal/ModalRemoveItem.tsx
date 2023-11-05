@@ -1,6 +1,4 @@
 /* VENDOR */
-import { useAppDispatch } from '../../hooks/hooks';
-import { useLocation } from 'react-router-dom';
 
 /* APPLICATION */
 import { Modal } from './Modal';
@@ -9,6 +7,8 @@ import { ModalText } from './ModalText';
 import { ModalFooter } from './ModalFooter';
 import { tasksRemoved, tasksClearedCategories } from '../../store/tasksSlice';
 import { categoriesRemoved } from '../../store/categoriesSlice';
+import { useAppDispatch } from '../../hooks/hooks';
+import { useCheckPath } from '../../hooks/useCheckPath';
 
 interface ModalRemoveItemProps {
 	item: {
@@ -26,10 +26,9 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
 	active,
 	setActive,
 }) => {
-	const dispatch = useAppDispatch(),
-		{ pathname } = useLocation(),
-		isCategories = pathname.includes('categories'),
-		text = `Вы уверены, что хотите удалить задачу "${item.name}"?`;
+	const dispatch = useAppDispatch();
+	const isCategories = useCheckPath();
+	const text = `Вы уверены, что хотите удалить задачу "${item.name}"?`;
 
 	return (
 		<Modal item={item} active={active} setActive={setActive}>

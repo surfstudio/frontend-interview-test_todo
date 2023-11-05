@@ -1,7 +1,5 @@
 /* VENDOR */
 import { useState } from 'react';
-import { useAppDispatch } from '../../hooks/hooks';
-import { useLocation } from 'react-router-dom';
 
 /* APPLICATION */
 import { Modal } from './Modal';
@@ -12,6 +10,8 @@ import { ModalTextarea } from './ModalTextarea';
 import { ModalFooter } from './ModalFooter';
 import { tasksAdded } from '../../store/tasksSlice';
 import { categoriesAdded } from '../../store/categoriesSlice';
+import { useAppDispatch } from '../../hooks/hooks';
+import { useCheckPath } from '../../hooks/useCheckPath';
 
 interface ModalCreateItemProps {
 	active: boolean;
@@ -22,12 +22,11 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 	active,
 	setActive,
 }) => {
-	const dispatch = useAppDispatch(),
-		{ pathname } = useLocation(),
-		isCategories = pathname.includes('categories'),
-		[name, setName] = useState(''),
-		[selected, setSelected] = useState(''),
-		[description, setDescription] = useState('');
+	const dispatch = useAppDispatch();
+	const isCategories = useCheckPath();
+	const [name, setName] = useState('');
+	const [selected, setSelected] = useState('');
+	const [description, setDescription] = useState('');
 
 	function clearState() {
 		setName('');

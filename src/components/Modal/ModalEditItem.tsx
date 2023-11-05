@@ -1,7 +1,5 @@
 /* VENDOR */
 import { useState } from 'react';
-import { useAppDispatch } from '../../hooks/hooks';
-import { useLocation } from 'react-router-dom';
 
 /* APPLICATION */
 import { Modal } from './Modal';
@@ -12,6 +10,8 @@ import { ModalTextarea } from './ModalTextarea';
 import { ModalFooter } from './ModalFooter';
 import { tasksUpdated } from '../../store/tasksSlice';
 import { categoriesUpdated } from '../../store/categoriesSlice';
+import { useAppDispatch } from '../../hooks/hooks';
+import { useCheckPath } from '../../hooks/useCheckPath';
 
 interface ModalEditItemProps {
 	item: {
@@ -29,12 +29,11 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
 	active,
 	setActive,
 }) => {
-	const dispatch = useAppDispatch(),
-		{ pathname } = useLocation(),
-		isCategories = pathname.includes('categories'),
-		[name, setName] = useState(item.name),
-		[selected, setSelected] = useState(item.category || ''),
-		[description, setDescription] = useState(item.description);
+	const dispatch = useAppDispatch();
+	const isCategories = useCheckPath();
+	const [name, setName] = useState(item.name);
+	const [selected, setSelected] = useState(item.category || '');
+	const [description, setDescription] = useState(item.description);
 
 	return (
 		<Modal item={item} active={active} setActive={setActive}>

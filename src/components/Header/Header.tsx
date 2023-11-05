@@ -1,15 +1,15 @@
 /* VENDOR */
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 /* APPLICATION */
 import './Header.css';
 import { ModalCreateItem } from '../Modal/ModalCreateItem';
+import { useCheckPath } from '../../hooks/useCheckPath';
 
 export const Header = () => {
-	const { pathname } = useLocation();
-	const isCategories = pathname.includes('categories');
+	const isCategories = useCheckPath();
 	const isTasks = !isCategories;
 	const [createModalActive, setCreateModalActive] = useState(false);
 
