@@ -40,7 +40,7 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
 				onSubmit={
 					isCategories
 						? () => {
-								dispatch(categoriesRemoved(item.id));
+								dispatch(categoriesRemoved(item));
 								dispatch(tasksClearedCategories(item.id));
 						  }
 						: () => dispatch(tasksRemoved(item.id))
