@@ -1,15 +1,17 @@
 /* VENDOR */
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import clsx from 'clsx';
 
 /* APPLICATION */
 import './Header.css';
 import { ModalCreateItem } from '../Modal/ModalCreateItem';
 
 export const Header = () => {
-	const { pathname } = useLocation(),
-		isCategories = pathname.includes('categories'),
-		[createModalActive, setCreateModalActive] = useState(false);
+	const { pathname } = useLocation();
+	const isCategories = pathname.includes('categories');
+	const isTasks = !isCategories;
+	const [createModalActive, setCreateModalActive] = useState(false);
 
 	return (
 		<header className="header">
@@ -17,33 +19,29 @@ export const Header = () => {
 			<nav className="header-nav">
 				<ul className="header-list">
 					<li
-						className={
-							!isCategories
-								? 'header-list-item header-list-item-active'
-								: 'header-list-item'
-						}
+						className={clsx('header-list-item', {
+							'header-list-item-active': isTasks,
+						})}
 					>
 						<Link to="tasks">Задачи</Link>
 					</li>
 					<li
-						className={
-							isCategories
-								? 'header-list-item header-list-item-active'
-								: 'header-list-item'
-						}
+						className={clsx('header-list-item', {
+							'header-list-item-active': isCategories,
+						})}
 					>
 						<Link to="categories">Категории</Link>
 					</li>
 				</ul>
-				<button
-					className="header-button"
-					onClick={() => {
-						setCreateModalActive(true);
-					}}
-				>
-					{isCategories ? 'Добавить категорию' : 'Добавить задачу'}
-				</button>
 			</nav>
+			<button
+				className="header-button"
+				onClick={() => {
+					setCreateModalActive(true);
+				}}
+			>
+				{isCategories ? 'Добавить категорию' : 'Добавить задачу'}
+			</button>
 			<ModalCreateItem active={createModalActive} setActive={setCreateModalActive} />
 		</header>
 	);
