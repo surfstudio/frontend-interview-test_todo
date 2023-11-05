@@ -1,4 +1,6 @@
 .header {
+	max-width: 1280px;
+	margin: auto;
 	background-color: #3f72af;
 	box-sizing: border-box;
 	height: 88px;
