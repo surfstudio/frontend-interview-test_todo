@@ -1,9 +1,10 @@
 .header {
 	max-width: 1280px;
 	margin: auto;
+	width: 100%;
 	background-color: #3f72af;
 	box-sizing: border-box;
-	height: 88px;
+	min-height: 88px;
 	padding: 24px;
 	color: #fff;
 	display: flex;
@@ -12,9 +13,9 @@
 
 .header-title {
 	font-weight: 400;
-	font-size: 36px;
+	font-size: calc(clamp(20px, 6vw, 36px));
 	line-height: 40px;
-	margin-right: 65px;
+	margin-right: calc(clamp(20px, 5vw, 65px));
 }
 
 .header-nav {
@@ -42,25 +43,10 @@
 }
 
 .header-list-item a {
-	font-size: 24px;
+	font-size: calc(clamp(15px, 4vw, 24px));
 	line-height: 2px;
 	color: #dbe2ef;
 	position: relative;
-}
-
-/* .header-list-item a:first-child {
-    border-right: 2px solid #dbe2ef;
-  } */
-
-[href='/tasks']::after {
-	content: '';
-	box-sizing: border-box;
-	width: 0;
-	height: 28px;
-	border-right: 2px solid #dbe2ef;
-	position: absolute;
-	top: 2px;
-	left: 90px;
 }
 
 .header-list-item-active a {
@@ -73,7 +59,7 @@
 	height: 46px;
 	border: none;
 	color: #fff;
-	font-size: 20px;
+	font-size: calc(clamp(15px, 4vw, 20px));
 	line-height: 46px;
 	background-color: #3f72af;
 }

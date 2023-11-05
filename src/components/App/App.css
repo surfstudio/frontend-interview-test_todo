@@ -1,16 +1,16 @@
-html {
-	background-color: #dbe2ef;
+.app {
+	display: flex;
+	flex-direction: column;
 }
 
-/* Lists */
 .list-item {
 	box-sizing: border-box;
 	padding: 10px;
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
-	width: 1000px;
-	height: 80px;
+	max-width: 1000px;
+	min-height: 80px;
 	border-bottom: 2px solid #3f72af;
 }
 
