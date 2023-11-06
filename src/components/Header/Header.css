@@ -62,4 +62,5 @@
 	font-size: calc(clamp(15px, 4vw, 20px));
 	line-height: calc(clamp(15px, 4vw, 46px));
 	background-color: #3f72af;
+	text-align: right;
 }
