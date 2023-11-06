@@ -34,6 +34,22 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 		setSelected('');
 	}
 
+	const handleSubmit = () => {
+		if (name) {
+			dispatch(
+				isCategories
+					? categoriesAdded({ name, description })
+					: tasksAdded({
+							name,
+							description,
+							category: selected,
+					  })
+			);
+			clearState();
+			setActive(false);
+		}
+	};
+
 	return (
 		<Modal active={active} setActive={setActive} clearState={clearState}>
 			<ModalHeader
@@ -57,23 +73,7 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 				clearState={clearState}
 				submitBtnText="Создать"
 				size="large"
-				onSubmit={
-					name
-						? () => {
-								dispatch(
-									isCategories
-										? categoriesAdded({ name, description })
-										: tasksAdded({
-												name,
-												description,
-												category: selected,
-										  })
-								);
-								clearState();
-								setActive(false);
-						  }
-						: () => null
-				}
+				onSubmit={handleSubmit}
 			/>
 		</Modal>
 	);
