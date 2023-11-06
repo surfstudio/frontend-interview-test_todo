@@ -1,4 +1,4 @@
-# ⭐ [TODO App](https://viewport-jsapro.nomoreparties.co) ⭐
+# ⭐ TODO App ⭐
 
 <br/>
 
