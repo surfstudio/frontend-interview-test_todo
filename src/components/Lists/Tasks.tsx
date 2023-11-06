@@ -11,7 +11,7 @@ export const Tasks = () => {
 	return (
 		<ul>
 			{tasks.map((task) => (
-				<ListItem key={task.id} item={task} />
+				<ListItem key={task.id} {...task} />
 			))}
 		</ul>
 	);

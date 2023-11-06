@@ -11,7 +11,7 @@ export const Categories = () => {
 	return (
 		<ul>
 			{categories.map((category) => (
-				<ListItem key={category.id} item={category} />
+				<ListItem key={category.id} {...category} />
 			))}
 		</ul>
 	);
