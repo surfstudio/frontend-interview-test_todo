@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 /* APPLICATION */
 import "./Header.css";
-import { ModalCreateItem } from "../Modal/ModalCreateItem";
+import { ModalCreateItem } from "../ModalCreateItem/ModalCreateItem";
 
 export const Header = () => {
   const { pathname } = useLocation(),
@@ -19,8 +19,8 @@ export const Header = () => {
           <li
             className={
               !isCategories
-                ? "header-list-item header-list-item-active"
-                : "header-list-item"
+                ? "header-list-item"
+                : "header-list-item header-list-item-active"
             }
           >
             <Link to="tasks">Задачи</Link>
@@ -28,8 +28,8 @@ export const Header = () => {
           <li
             className={
               isCategories
-                ? "header-list-item header-list-item-active"
-                : "header-list-item"
+                ? "header-list-item"
+                : "header-list-item header-list-item-active"
             }
           >
             <Link to="categories">Категории</Link>

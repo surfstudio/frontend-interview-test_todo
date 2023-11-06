@@ -1,9 +1,6 @@
 /* VENDOR */
 import React from "react";
 
-/* APPLICATION */
-import "./Modal.css";
-
 interface ModalProps {
   item?: {
     id: string;

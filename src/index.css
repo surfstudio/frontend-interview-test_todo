@@ -1,7 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
+@import url(components/ListItem/ListItem.css);
+@import url(components/Modal/Modal.css);
+@import url(components/ModalBtn/ModalBtn.css);
+@import url(components/ModalDropdown/ModalDropdown.css);
+@import url(components/ModalFooter/ModalFooter.css);
+@import url(components/ModalHeader/ModalHeader.css);
+@import url(components/ModalInput/ModalInput.css);
+@import url(components/ModalRow/ModalRow.css);
+@import url(components/ModalText/ModalText.css);
+@import url(components/ModalTextArea/ModalTextArea.css);
+
 * {
   font-family: "Roboto", sans-serif;
+}
+
+html {
+  background-color: #dbe2ef;
 }
 
 body {

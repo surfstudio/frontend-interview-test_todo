@@ -1,4 +1,4 @@
-import { ModalBtn } from "./ModalBtn";
+import { ModalBtn } from "../ModalBtn/ModalBtn";
 
 interface ModalFooterProps {
   clearState?(): void;

@@ -1,14 +1,14 @@
 /* VENDOR */
-import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
-import { Modal } from "./Modal";
-import { ModalHeader } from "./ModalHeader";
-import { ModalText } from "./ModalText";
-import { ModalFooter } from "./ModalFooter";
-import { tasksRemoved, tasksClearedCategories } from "../features/tasksSlice";
-import { categoriesRemoved } from "../features/categoriesSlice";
+import { Modal } from "../Modal/Modal";
+import { ModalHeader } from "../ModalHeader/ModalHeader";
+import { ModalText } from "../ModalText/ModalText";
+import { ModalFooter } from "../ModalFooter/ModalFooter";
+import { tasksRemoved, tasksClearedCategories } from "../../features/tasksSlice";
+import { categoriesRemoved } from "../../features/categoriesSlice";
+import {useAppDispatch} from "../../app/hooks";
 
 interface ModalRemoveItemProps {
   item: {
@@ -26,15 +26,16 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
   active,
   setActive,
 }) => {
-  const dispatch = useDispatch(),
+  const dispatch = useAppDispatch(),
     { pathname } = useLocation(),
     isCategories = pathname.includes("categories"),
-    text = `Вы уверены, что хотите удалить задачу "${item.name}"?`;
+    textTask = `Вы уверены, что хотите удалить задачу "${item.name}"?`,
+    textCategory = `Вы уверены, что хотите удалить категорию "${item.name}"?`;
 
   return (
     <Modal item={item} active={active} setActive={setActive}>
-      <ModalHeader setActive={setActive} title={"Удаление задачи"} />
-      <ModalText text={text} />
+      <ModalHeader setActive={setActive} title={isCategories ? "Удаление категории" :"Удаление задачи"} />
+      <ModalText text={isCategories ? textCategory : textTask} />
       <ModalFooter
         setActive={setActive}
         submitBtnText="Да"

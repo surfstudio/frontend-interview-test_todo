@@ -1,5 +1,3 @@
-import "./ModalBtn.css";
-
 interface ModalBtnProps {
   type?: string;
   children: React.ReactNode;
