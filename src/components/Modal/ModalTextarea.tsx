@@ -1,3 +1,4 @@
+/* VENDOR */
 import React from 'react';
 
 interface ModalTextareaProps {

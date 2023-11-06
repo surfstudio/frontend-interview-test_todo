@@ -1,4 +1,7 @@
+/* VENDOR */
 import React from 'react';
+
+/* APPLICATION */
 import { ModalInput } from './ModalInput';
 import { ModalDropdown } from './ModalDropdown';
 

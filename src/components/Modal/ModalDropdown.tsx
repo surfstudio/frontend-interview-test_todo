@@ -1,8 +1,8 @@
 /* VENDOR */
 import React, { useState } from 'react';
-import { useAppSelector } from '../../hooks/hooks';
 
 /* APPLICATION */
+import { useAppSelector } from '../../hooks/hooks';
 import down from '../../assets/images/down.svg';
 import { selectAllCategories } from '../../store/categoriesSlice';
 

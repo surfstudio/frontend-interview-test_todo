@@ -3,8 +3,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
 /* APPLICATION */
-import { RootState } from './store';
 import { initialState } from '../data/constants';
+import { RootState } from './store';
 import type { CategoriesStateWithCategory } from './types';
 
 export const tasksSlice = createSlice({

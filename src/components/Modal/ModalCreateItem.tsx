@@ -2,16 +2,16 @@
 import React, { useState } from 'react';
 
 /* APPLICATION */
+import { categoriesAdded } from '../../store/categoriesSlice';
+import { tasksAdded } from '../../store/tasksSlice';
+import { useCheckPath } from '../../hooks/useCheckPath';
+import { useAppDispatch } from '../../hooks/hooks';
 import { Modal } from './Modal';
 import { ModalHeader } from './ModalHeader';
 import { ModalInput } from './ModalInput';
 import { ModalRow } from './ModalRow';
 import { ModalTextarea } from './ModalTextarea';
 import { ModalFooter } from './ModalFooter';
-import { tasksAdded } from '../../store/tasksSlice';
-import { categoriesAdded } from '../../store/categoriesSlice';
-import { useAppDispatch } from '../../hooks/hooks';
-import { useCheckPath } from '../../hooks/useCheckPath';
 
 interface ModalCreateItemProps {
 	active: boolean;

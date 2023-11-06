@@ -1,4 +1,7 @@
+/* VENDOR */
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+
+/* APPLICATION */
 import categoriesReducer from './categoriesSlice';
 import tasksReducer from './tasksSlice';
 

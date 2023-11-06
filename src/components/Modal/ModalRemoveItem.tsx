@@ -2,14 +2,14 @@
 import React from 'react';
 
 /* APPLICATION */
+import { categoriesRemoved } from '../../store/categoriesSlice';
+import { tasksRemoved, tasksClearedCategories } from '../../store/tasksSlice';
+import { useCheckPath } from '../../hooks/useCheckPath';
+import { useAppDispatch } from '../../hooks/hooks';
 import { Modal } from './Modal';
 import { ModalHeader } from './ModalHeader';
 import { ModalText } from './ModalText';
 import { ModalFooter } from './ModalFooter';
-import { tasksRemoved, tasksClearedCategories } from '../../store/tasksSlice';
-import { categoriesRemoved } from '../../store/categoriesSlice';
-import { useAppDispatch } from '../../hooks/hooks';
-import { useCheckPath } from '../../hooks/useCheckPath';
 
 interface ModalRemoveItemProps {
 	item: {

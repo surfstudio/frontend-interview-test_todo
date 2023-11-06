@@ -1,5 +1,8 @@
+/* VENDOR */
 import React from 'react';
 import clsx from 'clsx';
+
+/* APPLICATION */
 import './ModalBtn.css';
 
 interface ModalBtnProps {

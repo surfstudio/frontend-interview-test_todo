@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 /* APPLICATION */
-import './Header.css';
-import { ModalCreateItem } from '../Modal/ModalCreateItem';
 import { useCheckPath } from '../../hooks/useCheckPath';
+import { ModalCreateItem } from '../Modal/ModalCreateItem';
+import './Header.css';
 
 export const Header = () => {
 	const isCategories = useCheckPath();
