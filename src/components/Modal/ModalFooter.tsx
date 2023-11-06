@@ -12,19 +12,17 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
 	size,
 	onSubmit,
 }) => {
+	const handleClick = () => {
+		clearState?.();
+		setActive(false);
+	};
+
 	return (
 		<div className="modal__content-footer">
 			<ModalBtn type="primary" size={size || ''} onClick={onSubmit}>
 				{submitBtnText}
 			</ModalBtn>
-			<ModalBtn
-				onClick={() => {
-					clearState && clearState();
-					setActive(false);
-				}}
-			>
-				Закрыть
-			</ModalBtn>
+			<ModalBtn onClick={handleClick}>Закрыть</ModalBtn>
 		</div>
 	);
 };

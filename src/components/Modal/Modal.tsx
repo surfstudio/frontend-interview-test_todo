@@ -12,14 +12,13 @@ export const Modal: React.FC<ModalProps> = ({
 	setActive,
 	children,
 }) => {
+	const handleClick = () => {
+		clearState?.();
+		setActive(false);
+	};
+
 	return (
-		<div
-			className={clsx('modal', { modal_active: active })}
-			onClick={() => {
-				clearState && clearState();
-				setActive(false);
-			}}
-		>
+		<div className={clsx('modal', { modal_active: active })} onClick={handleClick}>
 			<div className="modal__content" onClick={(e) => e.stopPropagation()}>
 				{children}
 			</div>
