@@ -24,11 +24,11 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 	const [selected, setSelected] = useState('');
 	const [description, setDescription] = useState('');
 
-	function clearState() {
+	const clearState = () => {
 		setName('');
 		setDescription('');
 		setSelected('');
-	}
+	};
 
 	const handleSubmit = () => {
 		if (name) {

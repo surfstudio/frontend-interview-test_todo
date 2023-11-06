@@ -7,7 +7,7 @@ import { Header } from '../Header/Header';
 import { Tasks } from '../Lists/Tasks';
 import { Categories } from '../Lists/Categories';
 
-function App() {
+const App = () => {
 	return (
 		<div className="app">
 			<Header />
@@ -18,6 +18,6 @@ function App() {
 			</Routes>
 		</div>
 	);
-}
+};
 
 export default App;
