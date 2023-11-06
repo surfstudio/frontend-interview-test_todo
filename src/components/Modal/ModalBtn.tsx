@@ -1,5 +1,6 @@
-import './ModalBtn.css';
+import React from 'react';
 import clsx from 'clsx';
+import './ModalBtn.css';
 
 interface ModalBtnProps {
 	type?: string;
@@ -8,12 +9,7 @@ interface ModalBtnProps {
 	onClick: () => void;
 }
 
-export const ModalBtn: React.FC<ModalBtnProps> = ({
-	type,
-	children,
-	size,
-	onClick,
-}: ModalBtnProps) => {
+export const ModalBtn: React.FC<ModalBtnProps> = ({ type, children, size, onClick }) => {
 	const btnClass = clsx(
 		'modalbtn',
 		{

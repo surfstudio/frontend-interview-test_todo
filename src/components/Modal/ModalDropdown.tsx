@@ -1,5 +1,5 @@
 /* VENDOR */
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAppSelector } from '../../hooks/hooks';
 
 /* APPLICATION */
@@ -14,7 +14,7 @@ interface ModalDropdownProps {
 export const ModalDropdown: React.FC<ModalDropdownProps> = ({
 	selected,
 	setSelected,
-}: ModalDropdownProps) => {
+}) => {
 	const [isActive, setIsActive] = useState(false),
 		options = useAppSelector(selectAllCategories);
 

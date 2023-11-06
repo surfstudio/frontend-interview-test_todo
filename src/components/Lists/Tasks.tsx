@@ -5,7 +5,7 @@ import { selectAllTasks } from '../../store/tasksSlice';
 import { useAppSelector } from '../../hooks/hooks';
 import { ListItem } from './ListItem';
 
-export const Tasks: React.FC = () => {
+export const Tasks = () => {
 	const tasks = useAppSelector(selectAllTasks);
 
 	return (

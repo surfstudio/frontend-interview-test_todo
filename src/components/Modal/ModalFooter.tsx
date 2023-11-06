@@ -1,3 +1,4 @@
+import React from 'react';
 import { ModalBtn } from './ModalBtn';
 
 interface ModalFooterProps {
@@ -14,7 +15,7 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
 	submitBtnText,
 	size,
 	onSubmit,
-}: ModalFooterProps) => {
+}) => {
 	return (
 		<div className="modal__content-footer">
 			<ModalBtn type="primary" size={size || ''} onClick={onSubmit}>

@@ -1,3 +1,4 @@
+import React from 'react';
 import close from '../../assets/images/close.svg';
 
 interface ModalHeaderProps {
@@ -10,7 +11,7 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
 	clearState,
 	title,
 	setActive,
-}: ModalHeaderProps) => {
+}) => {
 	return (
 		<header className="modal__content-header">
 			<h4 className="modal__content-title">{title}</h4>

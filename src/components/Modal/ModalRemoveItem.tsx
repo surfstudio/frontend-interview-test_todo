@@ -1,4 +1,5 @@
 /* VENDOR */
+import React from 'react';
 
 /* APPLICATION */
 import { Modal } from './Modal';
@@ -25,7 +26,7 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
 	item,
 	active,
 	setActive,
-}: ModalRemoveItemProps) => {
+}) => {
 	const dispatch = useAppDispatch();
 	const isCategories = useCheckPath();
 	const text = `Вы уверены, что хотите удалить задачу "${item.name}"?`;

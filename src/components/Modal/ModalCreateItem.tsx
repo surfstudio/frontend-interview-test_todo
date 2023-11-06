@@ -1,5 +1,5 @@
 /* VENDOR */
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 /* APPLICATION */
 import { Modal } from './Modal';
@@ -21,7 +21,7 @@ interface ModalCreateItemProps {
 export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 	active,
 	setActive,
-}: ModalCreateItemProps) => {
+}) => {
 	const dispatch = useAppDispatch();
 	const isCategories = useCheckPath();
 	const [name, setName] = useState('');

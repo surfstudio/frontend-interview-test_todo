@@ -1,3 +1,4 @@
+import React from 'react';
 import important from '../../assets/images/important.svg';
 
 interface ModalInputProps {
@@ -6,11 +7,7 @@ interface ModalInputProps {
 	size?: string;
 }
 
-export const ModalInput: React.FC<ModalInputProps> = ({
-	name,
-	setName,
-	size,
-}: ModalInputProps) => {
+export const ModalInput: React.FC<ModalInputProps> = ({ name, setName, size }) => {
 	return (
 		<div className={size === 'large' ? 'modalinput-wrapper large' : 'modalinput-wrapper'}>
 			<input

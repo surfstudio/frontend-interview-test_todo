@@ -23,7 +23,7 @@ export const Modal: React.FC<ModalProps> = ({
 	active,
 	setActive,
 	children,
-}: ModalProps) => {
+}) => {
 	return (
 		<div
 			className={clsx('modal', { modal_active: active })}

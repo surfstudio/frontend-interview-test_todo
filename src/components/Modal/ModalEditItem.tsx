@@ -1,5 +1,5 @@
 /* VENDOR */
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 /* APPLICATION */
 import { Modal } from './Modal';
@@ -28,7 +28,7 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
 	item,
 	active,
 	setActive,
-}: ModalEditItemProps) => {
+}) => {
 	const dispatch = useAppDispatch();
 	const isCategories = useCheckPath();
 	const [name, setName] = useState(item.name);

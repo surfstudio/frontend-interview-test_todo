@@ -1,5 +1,5 @@
 /* VENDOR */
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 /* APPLICATION */
 import { selectAllCategories } from '../../store/categoriesSlice';
@@ -18,7 +18,7 @@ interface ListItemProps {
 	};
 }
 
-export const ListItem: React.FC<ListItemProps> = ({ item }: ListItemProps) => {
+export const ListItem: React.FC<ListItemProps> = ({ item }) => {
 	const categories = useAppSelector(selectAllCategories);
 	const [editModalActive, setEditModalActive] = useState(false);
 	const [removeModalActive, setRemoveModalActive] = useState(false);
