@@ -17,7 +17,7 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
 	setActive,
 }) => {
 	const dispatch = useAppDispatch();
-	const isCategories = useCheckPath();
+	const isCategories = useCheckPath('categories');
 	const handleSubmit = () => {
 		if (isCategories) {
 			dispatch(categoriesRemoved(item));

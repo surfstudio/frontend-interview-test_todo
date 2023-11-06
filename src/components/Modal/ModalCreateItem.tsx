@@ -19,7 +19,7 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 	setActive,
 }) => {
 	const dispatch = useAppDispatch();
-	const isCategories = useCheckPath();
+	const isCategories = useCheckPath('categories');
 	const [name, setName] = useState('');
 	const [selected, setSelected] = useState('');
 	const [description, setDescription] = useState('');

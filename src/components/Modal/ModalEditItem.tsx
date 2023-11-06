@@ -20,7 +20,7 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
 	setActive,
 }) => {
 	const dispatch = useAppDispatch();
-	const isCategories = useCheckPath();
+	const isCategories = useCheckPath('categories');
 	const [name, setName] = useState(item.name);
 	const [selected, setSelected] = useState(item.category || '');
 	const [description, setDescription] = useState(item.description);

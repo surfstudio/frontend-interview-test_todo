@@ -9,7 +9,7 @@ import { ModalCreateItem } from '../Modal/ModalCreateItem';
 import './Header.css';
 
 export const Header = () => {
-	const isCategories = useCheckPath();
+	const isCategories = useCheckPath('categories');
 	const isTasks = !isCategories;
 	const [createModalActive, setCreateModalActive] = useState(false);
 
