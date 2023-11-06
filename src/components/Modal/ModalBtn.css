@@ -4,7 +4,7 @@
 	max-width: 120px;
 	width: 100%;
 	font-weight: 400;
-	font-size: 20px;
+	font-size: calc(clamp(15px, 4vw, 20px));
 	line-height: 46px;
 	color: #3f72af;
 	border: 2px solid #3f72af;

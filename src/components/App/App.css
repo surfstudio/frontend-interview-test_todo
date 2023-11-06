@@ -5,10 +5,11 @@
 
 .list-item {
 	box-sizing: border-box;
-	padding: 10px;
+	padding: 10px 20px;
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
+	gap: 20px;
 	max-width: 1000px;
 	min-height: 80px;
 	border-bottom: 2px solid #3f72af;
@@ -35,12 +36,14 @@
 	line-height: 20px;
 	color: #000000;
 	margin-right: 16px;
+	flex-grow: 1;
 }
 
 .list-item-col1-row1__category {
 	font-weight: 400;
 	font-size: 18px;
 	color: #3f72af;
+	flex-grow: 1;
 }
 
 .list-item-col1-row1__category::before {
@@ -55,6 +58,10 @@
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 20px;
+}
+
+.list-item-col2 {
+	display: flex;
 }
 
 .list-item-col2__btn {

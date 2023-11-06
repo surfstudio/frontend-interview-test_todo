@@ -14,7 +14,7 @@
 .header-title {
 	font-weight: 400;
 	font-size: calc(clamp(20px, 6vw, 36px));
-	line-height: 40px;
+	line-height: calc(clamp(20px, 5vw, 40px));
 	margin-right: calc(clamp(20px, 5vw, 65px));
 }
 
@@ -43,7 +43,7 @@
 }
 
 .header-list-item a {
-	font-size: calc(clamp(15px, 4vw, 24px));
+	font-size: calc(clamp(10px, 4vw, 24px));
 	line-height: 2px;
 	color: #dbe2ef;
 	position: relative;
@@ -60,6 +60,6 @@
 	border: none;
 	color: #fff;
 	font-size: calc(clamp(15px, 4vw, 20px));
-	line-height: 46px;
+	line-height: calc(clamp(15px, 4vw, 46px));
 	background-color: #3f72af;
 }

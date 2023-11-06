@@ -9,7 +9,9 @@ export const ModalTextarea: React.FC<ModalTextareaProps> = ({
 }: ModalTextareaProps) => {
 	return (
 		<div className="modaltextarea-wrapper">
-			<label htmlFor="modaltextarea">Описание</label>
+			<label className="dropdown-label" htmlFor="modaltextarea">
+				Описание
+			</label>
 			<textarea
 				id="modaltextarea"
 				className="modaltextarea"

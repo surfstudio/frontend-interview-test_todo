@@ -72,7 +72,7 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 								clearState();
 								setActive(false);
 						  }
-						: () => {}
+						: () => null
 				}
 			/>
 		</Modal>

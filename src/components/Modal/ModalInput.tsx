@@ -21,7 +21,9 @@ export const ModalInput: React.FC<ModalInputProps> = ({
 				onChange={(e) => setName(e.target.value)}
 			/>
 			<img src={important} alt="important" className="modalinput-icon" />
-			<label htmlFor="modalinput">Имя</label>
+			<label className="dropdown-label" htmlFor="modalinput">
+				Имя
+			</label>
 		</div>
 	);
 };
