@@ -7,14 +7,14 @@ import type { ModalFooterProps } from './types';
 
 export const ModalFooter: React.FC<ModalFooterProps> = ({
 	clearState,
-	setActive,
+	setIsActive,
 	submitBtnText,
 	size,
 	onSubmit,
 }) => {
 	const handleClick = () => {
 		clearState?.();
-		setActive(false);
+		setIsActive(false);
 	};
 
 	return (

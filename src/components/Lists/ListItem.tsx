@@ -23,8 +23,8 @@ export const ListItem: React.FC<ListItemProps> = ({
 	category,
 }) => {
 	const categories = useAppSelector(selectAllCategories);
-	const [editModalActive, setEditModalActive] = useState(false);
-	const [removeModalActive, setRemoveModalActive] = useState(false);
+	const [isEditModalActive, setIsEditModalActive] = useState(false);
+	const [isRemoveModalActive, setIsRemoveModalActive] = useState(false);
 
 	return (
 		<li className="list-item">
@@ -43,7 +43,7 @@ export const ListItem: React.FC<ListItemProps> = ({
 				<button
 					className="list-item-col2__btn"
 					onClick={() => {
-						setEditModalActive(true);
+						setIsEditModalActive(true);
 					}}
 				>
 					<img src={edit} alt="иконка редактирования" />
@@ -51,7 +51,7 @@ export const ListItem: React.FC<ListItemProps> = ({
 				<button
 					className="list-item-col2__btn"
 					onClick={() => {
-						setRemoveModalActive(true);
+						setIsRemoveModalActive(true);
 					}}
 				>
 					<img src={remove} alt="иконка удаления" />
@@ -59,13 +59,13 @@ export const ListItem: React.FC<ListItemProps> = ({
 			</div>
 			<ModalEditItem
 				item={{ id, name, description, category }}
-				active={editModalActive}
-				setActive={setEditModalActive}
+				isActive={isEditModalActive}
+				setIsActive={setIsEditModalActive}
 			/>
 			<ModalRemoveItem
 				item={{ id, name, description, category }}
-				active={removeModalActive}
-				setActive={setRemoveModalActive}
+				isActive={isRemoveModalActive}
+				setIsActive={setIsRemoveModalActive}
 			/>
 		</li>
 	);

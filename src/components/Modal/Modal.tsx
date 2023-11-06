@@ -8,17 +8,17 @@ import type { ModalProps } from './types';
 
 export const Modal: React.FC<ModalProps> = ({
 	clearState,
-	active,
-	setActive,
+	isActive,
+	setIsActive,
 	children,
 }) => {
 	const handleClick = () => {
 		clearState?.();
-		setActive(false);
+		setIsActive(false);
 	};
 
 	return (
-		<div className={clsx('modal', { modal_active: active })} onClick={handleClick}>
+		<div className={clsx('modal', { modal_active: isActive })} onClick={handleClick}>
 			<div className="modal__content" onClick={(e) => e.stopPropagation()}>
 				{children}
 			</div>

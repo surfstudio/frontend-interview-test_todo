@@ -8,11 +8,11 @@ import type { ModalHeaderProps } from './types';
 export const ModalHeader: React.FC<ModalHeaderProps> = ({
 	clearState,
 	title,
-	setActive,
+	setIsActive,
 }) => {
 	const handleClick = () => {
 		clearState?.();
-		setActive(false);
+		setIsActive(false);
 	};
 
 	return (

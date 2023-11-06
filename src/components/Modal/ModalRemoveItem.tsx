@@ -13,8 +13,8 @@ import type { ModalRemoveItemProps } from './types';
 
 export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
 	item,
-	active,
-	setActive,
+	isActive,
+	setIsActive,
 }) => {
 	const dispatch = useAppDispatch();
 	const isCategories = useCheckPath('categories');
@@ -27,10 +27,10 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
 	};
 
 	return (
-		<Modal item={item} active={active} setActive={setActive}>
-			<ModalHeader setActive={setActive} title={'Удаление задачи'} />
+		<Modal item={item} isActive={isActive} setIsActive={setIsActive}>
+			<ModalHeader setIsActive={setIsActive} title={'Удаление задачи'} />
 			<p className="modal__content-text">{`Вы уверены, что хотите удалить задачу "${item.name}"?`}</p>
-			<ModalFooter setActive={setActive} submitBtnText="Да" onSubmit={handleSubmit} />
+			<ModalFooter setIsActive={setIsActive} submitBtnText="Да" onSubmit={handleSubmit} />
 		</Modal>
 	);
 };

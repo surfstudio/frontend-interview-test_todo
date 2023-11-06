@@ -5,8 +5,8 @@ export interface ModalProps {
 		description: string;
 		category?: string;
 	};
-	active: boolean;
-	setActive: React.Dispatch<React.SetStateAction<boolean>>;
+	isActive: boolean;
+	setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
 	children: React.ReactNode;
 	clearState?(): void;
 }
@@ -19,8 +19,8 @@ export interface ModalBtnProps {
 }
 
 export interface ModalCreateItemProps {
-	active: boolean;
-	setActive: React.Dispatch<React.SetStateAction<boolean>>;
+	isActive: boolean;
+	setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface ModalDropdownProps {
@@ -35,13 +35,13 @@ export interface ModalEditItemProps {
 		description: string;
 		category?: string;
 	};
-	active: boolean;
-	setActive: React.Dispatch<React.SetStateAction<boolean>>;
+	isActive: boolean;
+	setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface ModalFooterProps {
 	clearState?(): void;
-	setActive: React.Dispatch<React.SetStateAction<boolean>>;
+	setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
 	submitBtnText: string;
 	size?: string;
 	onSubmit: () => void;
@@ -49,7 +49,7 @@ export interface ModalFooterProps {
 
 export interface ModalHeaderProps {
 	clearState?(): void;
-	setActive: React.Dispatch<React.SetStateAction<boolean>>;
+	setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
 	title: string;
 }
 
@@ -66,8 +66,8 @@ export interface ModalRemoveItemProps {
 		description: string;
 		category?: string;
 	};
-	active: boolean;
-	setActive: React.Dispatch<React.SetStateAction<boolean>>;
+	isActive: boolean;
+	setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface ModalRowProps {

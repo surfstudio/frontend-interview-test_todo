@@ -16,8 +16,8 @@ import type { ModalEditItemProps } from './types';
 
 export const ModalEditItem: React.FC<ModalEditItemProps> = ({
 	item,
-	active,
-	setActive,
+	isActive,
+	setIsActive,
 }) => {
 	const dispatch = useAppDispatch();
 	const isCategories = useCheckPath('categories');
@@ -37,14 +37,14 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
 							category: selected,
 					  })
 			);
-			setActive(false);
+			setIsActive(false);
 		}
 	};
 
 	return (
-		<Modal item={item} active={active} setActive={setActive}>
+		<Modal item={item} isActive={isActive} setIsActive={setIsActive}>
 			<ModalHeader
-				setActive={setActive}
+				setIsActive={setIsActive}
 				title={isCategories ? 'Редактирование категории' : 'Редактирование задачи'}
 			/>
 			{isCategories ? (
@@ -59,7 +59,7 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
 			)}
 			<ModalTextarea description={description} setDescription={setDescription} />
 			<ModalFooter
-				setActive={setActive}
+				setIsActive={setIsActive}
 				submitBtnText="Сохранить"
 				size="large"
 				onSubmit={handleSubmit}

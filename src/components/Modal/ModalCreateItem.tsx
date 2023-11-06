@@ -15,19 +15,19 @@ import { ModalFooter } from './ModalFooter';
 import type { ModalCreateItemProps } from './types';
 
 export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
-	active,
-	setActive,
+	isActive,
+	setIsActive,
 }) => {
 	const dispatch = useAppDispatch();
 	const isCategories = useCheckPath('categories');
 	const [name, setName] = useState('');
-	const [selected, setSelected] = useState('');
+	const [selectedCategory, setSelectedCategory] = useState('');
 	const [description, setDescription] = useState('');
 
 	const clearState = () => {
 		setName('');
 		setDescription('');
-		setSelected('');
+		setSelectedCategory('');
 	};
 
 	const handleSubmit = () => {
@@ -38,19 +38,19 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 					: tasksAdded({
 							name,
 							description,
-							category: selected,
+							category: selectedCategory,
 					  })
 			);
 			clearState();
-			setActive(false);
+			setIsActive(false);
 		}
 	};
 
 	return (
-		<Modal active={active} setActive={setActive} clearState={clearState}>
+		<Modal isActive={isActive} setIsActive={setIsActive} clearState={clearState}>
 			<ModalHeader
 				clearState={clearState}
-				setActive={setActive}
+				setIsActive={setIsActive}
 				title={isCategories ? 'Создание категории' : 'Создание задачи'}
 			/>
 			{isCategories ? (
@@ -59,13 +59,13 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 				<ModalRow
 					name={name}
 					setName={setName}
-					selected={selected}
-					setSelected={setSelected}
+					selected={selectedCategory}
+					setSelected={setSelectedCategory}
 				/>
 			)}
 			<ModalTextarea description={description} setDescription={setDescription} />
 			<ModalFooter
-				setActive={setActive}
+				setIsActive={setIsActive}
 				clearState={clearState}
 				submitBtnText="Создать"
 				size="large"

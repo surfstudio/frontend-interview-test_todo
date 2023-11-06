@@ -11,7 +11,7 @@ import './Header.css';
 export const Header = () => {
 	const isCategories = useCheckPath('categories');
 	const isTasks = !isCategories;
-	const [createModalActive, setCreateModalActive] = useState(false);
+	const [isCreateModalActive, setIsCreateModalActive] = useState(false);
 
 	return (
 		<header className="header">
@@ -37,12 +37,15 @@ export const Header = () => {
 			<button
 				className="header-button"
 				onClick={() => {
-					setCreateModalActive(true);
+					setIsCreateModalActive(true);
 				}}
 			>
 				{isCategories ? 'Добавить категорию' : 'Добавить задачу'}
 			</button>
-			<ModalCreateItem active={createModalActive} setActive={setCreateModalActive} />
+			<ModalCreateItem
+				isActive={isCreateModalActive}
+				setIsActive={setIsCreateModalActive}
+			/>
 		</header>
 	);
 };
