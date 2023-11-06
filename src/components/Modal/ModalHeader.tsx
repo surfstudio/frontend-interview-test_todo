@@ -20,7 +20,7 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
 					setActive(false);
 				}}
 			>
-				<img src={close} alt="close" />
+				<img src={close} alt="иконка закрытия" />
 			</button>
 		</header>
 	);

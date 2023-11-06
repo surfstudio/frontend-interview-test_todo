@@ -20,7 +20,7 @@ export const ModalDropdown: React.FC<ModalDropdownProps> = ({
 			<span className="dropdown-label">Категория</span>
 			<div className={clsx('dropdown-btn', { placeholder: !selected })}>
 				{options.find((option) => option.id === selected)?.name || 'Выберите категорию'}
-				<img src={down} alt="open dropdown" />
+				<img src={down} alt="иконка открытия выпадающего меню" />
 			</div>
 			{isActive && (
 				<div className="dropdown-content">

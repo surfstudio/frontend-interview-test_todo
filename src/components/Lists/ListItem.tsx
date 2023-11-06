@@ -43,7 +43,7 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
 						setEditModalActive(true);
 					}}
 				>
-					<img src={edit} alt="edit" />
+					<img src={edit} alt="иконка редактирования" />
 				</button>
 				<button
 					className="list-item-col2__btn"
@@ -51,7 +51,7 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
 						setRemoveModalActive(true);
 					}}
 				>
-					<img src={remove} alt="remove" />
+					<img src={remove} alt="иконка удаления" />
 				</button>
 			</div>
 			<ModalEditItem
