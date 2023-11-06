@@ -25,6 +25,22 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
 	const [selected, setSelected] = useState(item.category || '');
 	const [description, setDescription] = useState(item.description);
 
+	const handleSubmit = () => {
+		if (name) {
+			dispatch(
+				isCategories
+					? categoriesUpdated({ id: item.id, name, description })
+					: tasksUpdated({
+							id: item.id,
+							name,
+							description,
+							category: selected,
+					  })
+			);
+			setActive(false);
+		}
+	};
+
 	return (
 		<Modal item={item} active={active} setActive={setActive}>
 			<ModalHeader
@@ -46,19 +62,7 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
 				setActive={setActive}
 				submitBtnText="Сохранить"
 				size="large"
-				onSubmit={() => {
-					dispatch(
-						isCategories
-							? categoriesUpdated({ id: item.id, name, description })
-							: tasksUpdated({
-									id: item.id,
-									name,
-									description,
-									category: selected,
-							  })
-					);
-					setActive(false);
-				}}
+				onSubmit={handleSubmit}
 			/>
 		</Modal>
 	);
