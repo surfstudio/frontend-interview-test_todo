@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { categoriesUpdated } from '../../store/categoriesSlice';
 import { tasksUpdated } from '../../store/tasksSlice';
 import { useCheckPath } from '../../hooks/useCheckPath';
-import { useAppDispatch } from '../../hooks/hooks';
+import { useAppDispatch } from '../../hooks/reduxTypedHooks';
 import { Modal } from './Modal';
 import { ModalHeader } from './ModalHeader';
 import { ModalRow } from './ModalRow';

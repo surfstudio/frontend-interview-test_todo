@@ -2,7 +2,7 @@
 
 /* APPLICATION */
 import { selectAllCategories } from '../../store/categoriesSlice';
-import { useAppSelector } from '../../hooks/hooks';
+import { useAppSelector } from '../../hooks/reduxTypedHooks';
 import { ListItem } from './ListItem';
 
 export const Categories = () => {

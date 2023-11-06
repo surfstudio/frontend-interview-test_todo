@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 /* APPLICATION */
 import { selectAllCategories } from '../../store/categoriesSlice';
-import { useAppSelector } from '../../hooks/hooks';
+import { useAppSelector } from '../../hooks/reduxTypedHooks';
 import edit from '../../assets/images/edit.svg';
 import remove from '../../assets/images/remove.svg';
 import { ModalEditItem } from '../Modal/ModalEditItem';

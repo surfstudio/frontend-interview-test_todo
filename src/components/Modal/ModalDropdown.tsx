@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 
 /* APPLICATION */
-import { useAppSelector } from '../../hooks/hooks';
+import { useAppSelector } from '../../hooks/reduxTypedHooks';
 import down from '../../assets/images/down.svg';
 import { selectAllCategories } from '../../store/categoriesSlice';
 import type { ModalDropdownProps } from './types';
