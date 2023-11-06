@@ -77,10 +77,6 @@ export interface ModalRowProps {
 	setSelected: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export interface ModalTextProps {
-	text: string;
-}
-
 export interface ModalTextareaProps {
 	description: string;
 	setDescription: React.Dispatch<React.SetStateAction<string>>;

@@ -8,7 +8,6 @@ import { useCheckPath } from '../../hooks/useCheckPath';
 import { useAppDispatch } from '../../hooks/hooks';
 import { Modal } from './Modal';
 import { ModalHeader } from './ModalHeader';
-import { ModalText } from './ModalText';
 import { ModalFooter } from './ModalFooter';
 import type { ModalRemoveItemProps } from './types';
 
@@ -19,7 +18,6 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
 }) => {
 	const dispatch = useAppDispatch();
 	const isCategories = useCheckPath();
-	const text = `Вы уверены, что хотите удалить задачу "${item.name}"?`;
 	const handleSubmit = () => {
 		if (isCategories) {
 			dispatch(categoriesRemoved(item));
@@ -31,7 +29,7 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
 	return (
 		<Modal item={item} active={active} setActive={setActive}>
 			<ModalHeader setActive={setActive} title={'Удаление задачи'} />
-			<ModalText text={text} />
+			<p className="modal__content-text">{`Вы уверены, что хотите удалить задачу "${item.name}"?`}</p>
 			<ModalFooter setActive={setActive} submitBtnText="Да" onSubmit={handleSubmit} />
 		</Modal>
 	);
