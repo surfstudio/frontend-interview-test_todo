@@ -1,5 +1,6 @@
 /* VENDOR */
 import React, { useState } from 'react';
+import clsx from 'clsx';
 
 /* APPLICATION */
 import { useAppSelector } from '../../hooks/hooks';
@@ -17,7 +18,7 @@ export const ModalDropdown: React.FC<ModalDropdownProps> = ({
 	return (
 		<div className="dropdown" onClick={() => setIsActive(!isActive)}>
 			<span className="dropdown-label">Категория</span>
-			<div className={selected ? 'dropdown-btn' : 'dropdown-btn placeholder'}>
+			<div className={clsx('dropdown-btn', { placeholder: !selected })}>
 				{options.find((option) => option.id === selected)?.name || 'Выберите категорию'}
 				<img src={down} alt="open dropdown" />
 			</div>
