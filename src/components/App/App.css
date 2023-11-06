@@ -34,7 +34,7 @@
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 20px;
-	color: #000000;
+	color: #eb6207;
 	margin-right: 16px;
 	flex-grow: 1;
 }
@@ -71,6 +71,10 @@
 	height: 25px;
 	border: none;
 	background: transparent;
+}
+
+.list-item-col2__btn:hover {
+	transform: scale(1.1);
 }
 
 .list-item-col2__btn:first-child {

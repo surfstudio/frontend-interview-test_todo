@@ -13,6 +13,11 @@
 	cursor: pointer;
 }
 
+.modalbtn:hover {
+	transform: scale(1.01);
+	box-shadow: 12px 5px rgb(150, 175, 221);
+}
+
 .modalbtn:first-child {
 	margin-right: 24px;
 }
@@ -28,6 +33,8 @@
 	background-color: #304055a4;
 	border: 1px dotted #00050a;
 	cursor: not-allowed;
+	box-shadow: none;
+	transform: none;
 }
 
 .modalbtn.primary.large {

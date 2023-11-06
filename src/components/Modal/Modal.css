@@ -57,6 +57,10 @@
 	background: transparent;
 }
 
+.modal__content-header__btn:hover {
+	transform: scale(1.1);
+}
+
 .modal__content-text {
 	margin-bottom: 24px;
 	font-style: normal;
