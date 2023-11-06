@@ -6,7 +6,13 @@ import clsx from 'clsx';
 import './ModalBtn.css';
 import type { ModalBtnProps } from './types';
 
-export const ModalBtn: React.FC<ModalBtnProps> = ({ type, children, size, onClick }) => {
+export const ModalBtn: React.FC<ModalBtnProps> = ({
+	type,
+	children,
+	size,
+	onClick,
+	isDisabled,
+}) => {
 	const btnClass = clsx(
 		'modalbtn',
 		{
@@ -15,7 +21,7 @@ export const ModalBtn: React.FC<ModalBtnProps> = ({ type, children, size, onClic
 		{ primary: type === 'primary' }
 	);
 	return (
-		<button className={btnClass} onClick={onClick}>
+		<button disabled={isDisabled} className={btnClass} onClick={onClick}>
 			{children}
 		</button>
 	);

@@ -11,6 +11,7 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
 	submitBtnText,
 	size,
 	onSubmit,
+	isDisabled,
 }) => {
 	const handleClick = () => {
 		clearState?.();
@@ -19,7 +20,12 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
 
 	return (
 		<div className="modal__content-footer">
-			<ModalBtn type="primary" size={size || ''} onClick={onSubmit}>
+			<ModalBtn
+				type="primary"
+				size={size || ''}
+				onClick={onSubmit}
+				isDisabled={isDisabled}
+			>
 				{submitBtnText}
 			</ModalBtn>
 			<ModalBtn onClick={handleClick}>Закрыть</ModalBtn>

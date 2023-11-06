@@ -70,6 +70,7 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 				submitBtnText="Создать"
 				size="large"
 				onSubmit={handleSubmit}
+				isDisabled={!name}
 			/>
 		</Modal>
 	);

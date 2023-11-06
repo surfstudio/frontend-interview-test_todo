@@ -20,6 +20,14 @@
 .modalbtn.primary {
 	color: #fff;
 	background-color: #3f72af;
+	transition: background-color 0.5s ease-in-out;
+}
+
+.modalbtn.primary:disabled {
+	color: #0d161b;
+	background-color: #304055a4;
+	border: 1px dotted #00050a;
+	cursor: not-allowed;
 }
 
 .modalbtn.primary.large {

@@ -16,6 +16,7 @@ export interface ModalBtnProps {
 	children: React.ReactNode;
 	size?: string;
 	onClick: () => void;
+	isDisabled?: boolean;
 }
 
 export interface ModalCreateItemProps {
@@ -45,6 +46,7 @@ export interface ModalFooterProps {
 	submitBtnText: string;
 	size?: string;
 	onSubmit: () => void;
+	isDisabled?: boolean;
 }
 
 export interface ModalHeaderProps {

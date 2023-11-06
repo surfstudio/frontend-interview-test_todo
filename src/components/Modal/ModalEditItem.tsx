@@ -63,6 +63,7 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
 				submitBtnText="Сохранить"
 				size="large"
 				onSubmit={handleSubmit}
+				isDisabled={!name}
 			/>
 		</Modal>
 	);
