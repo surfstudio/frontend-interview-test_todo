@@ -12,28 +12,30 @@ export const ModalDropdown: React.FC<ModalDropdownProps> = ({
 	selected,
 	setSelected,
 }) => {
-	const [isActive, setIsActive] = useState(false),
-		options = useAppSelector(selectAllCategories);
+	const [isActive, setIsActive] = useState(false);
+	const categories = useAppSelector(selectAllCategories);
+	const placeholderText =
+		categories.find((category) => category.id === selected)?.name || 'Выберите категорию';
 
 	return (
 		<div className="dropdown" onClick={() => setIsActive(!isActive)}>
 			<span className="dropdown-label">Категория</span>
 			<div className={clsx('dropdown-btn', { placeholder: !selected })}>
-				{options.find((option) => option.id === selected)?.name || 'Выберите категорию'}
+				{placeholderText}
 				<img src={down} alt="иконка открытия выпадающего меню" />
 			</div>
 			{isActive && (
 				<div className="dropdown-content">
-					{options.map((option) => (
+					{categories.map((category) => (
 						<div
 							className="dropdown-item"
 							onClick={() => {
-								setSelected(option.id);
+								setSelected(category.id);
 								setIsActive(false);
 							}}
-							key={option.id}
+							key={category.id}
 						>
-							{option.name}
+							{category.name}
 						</div>
 					))}
 				</div>
