@@ -4,6 +4,6 @@ export interface CategoriesState {
 	description: string;
 }
 
-export interface CategoriesStateWithCategory extends CategoriesState {
+export interface TasksState extends CategoriesState {
 	category: string;
 }

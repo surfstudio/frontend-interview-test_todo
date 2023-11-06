@@ -3,27 +3,21 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
 /* APPLICATION */
-import { initialState } from '../data/constants';
+import { initialTasksState } from '../data/constants';
 import { RootState } from './store';
-import type { CategoriesStateWithCategory } from './types';
+import type { TasksState } from './types';
 
 export const tasksSlice = createSlice({
 	name: 'tasks',
-	initialState,
+	initialState: initialTasksState,
 	reducers: {
-		tasksAdded: (
-			state: CategoriesStateWithCategory[],
-			action: PayloadAction<Omit<CategoriesStateWithCategory, 'id'>>
-		) => {
+		tasksAdded: (state: TasksState[], action: PayloadAction<Omit<TasksState, 'id'>>) => {
 			state.push({
 				id: uuidv4(),
 				...action.payload,
 			});
 		},
-		tasksUpdated: (
-			state: CategoriesStateWithCategory[],
-			action: PayloadAction<CategoriesStateWithCategory>
-		) => {
+		tasksUpdated: (state: TasksState[], action: PayloadAction<TasksState>) => {
 			const { id, name, description, category } = action.payload,
 				existingTask = state.find((task) => task.id === id);
 
@@ -33,10 +27,7 @@ export const tasksSlice = createSlice({
 				existingTask.category = category;
 			}
 		},
-		tasksRemoved: (
-			state: CategoriesStateWithCategory[],
-			action: PayloadAction<string>
-		) => {
+		tasksRemoved: (state: TasksState[], action: PayloadAction<string>) => {
 			const id = action.payload;
 			const categoryIndexToRemove = state.findIndex((category) => category.id === id);
 
