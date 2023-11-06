@@ -176,7 +176,7 @@
 	box-sizing: border-box;
 	padding: 8px;
 	display: flex;
-	align-items: center; /* для треугольника */
+	align-items: center;
 	justify-content: space-between;
 	background: #dbe2ef;
 	border: 2px solid #3f72af;
