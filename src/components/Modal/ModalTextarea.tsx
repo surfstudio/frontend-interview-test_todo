@@ -1,10 +1,6 @@
 /* VENDOR */
 import React from 'react';
-
-interface ModalTextareaProps {
-	description: string;
-	setDescription: React.Dispatch<React.SetStateAction<string>>;
-}
+import type { ModalTextareaProps } from './types';
 
 export const ModalTextarea: React.FC<ModalTextareaProps> = ({
 	description,

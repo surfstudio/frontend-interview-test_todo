@@ -12,17 +12,7 @@ import { ModalRow } from './ModalRow';
 import { ModalInput } from './ModalInput';
 import { ModalTextarea } from './ModalTextarea';
 import { ModalFooter } from './ModalFooter';
-
-interface ModalEditItemProps {
-	item: {
-		id: string;
-		name: string;
-		description: string;
-		category?: string;
-	};
-	active: boolean;
-	setActive: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import type { ModalEditItemProps } from './types';
 
 export const ModalEditItem: React.FC<ModalEditItemProps> = ({
 	item,

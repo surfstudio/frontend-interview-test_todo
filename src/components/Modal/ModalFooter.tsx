@@ -3,14 +3,7 @@ import React from 'react';
 
 /* APPLICATION */
 import { ModalBtn } from './ModalBtn';
-
-interface ModalFooterProps {
-	clearState?(): void;
-	setActive: React.Dispatch<React.SetStateAction<boolean>>;
-	submitBtnText: string;
-	size?: string;
-	onSubmit: () => void;
-}
+import type { ModalFooterProps } from './types';
 
 export const ModalFooter: React.FC<ModalFooterProps> = ({
 	clearState,

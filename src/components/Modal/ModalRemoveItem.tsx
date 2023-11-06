@@ -10,17 +10,7 @@ import { Modal } from './Modal';
 import { ModalHeader } from './ModalHeader';
 import { ModalText } from './ModalText';
 import { ModalFooter } from './ModalFooter';
-
-interface ModalRemoveItemProps {
-	item: {
-		id: string;
-		name: string;
-		description: string;
-		category?: string;
-	};
-	active: boolean;
-	setActive: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import type { ModalRemoveItemProps } from './types';
 
 export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
 	item,

@@ -12,11 +12,7 @@ import { ModalInput } from './ModalInput';
 import { ModalRow } from './ModalRow';
 import { ModalTextarea } from './ModalTextarea';
 import { ModalFooter } from './ModalFooter';
-
-interface ModalCreateItemProps {
-	active: boolean;
-	setActive: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import type { ModalCreateItemProps } from './types';
 
 export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
 	active,

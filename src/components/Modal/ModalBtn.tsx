@@ -4,13 +4,7 @@ import clsx from 'clsx';
 
 /* APPLICATION */
 import './ModalBtn.css';
-
-interface ModalBtnProps {
-	type?: string;
-	children: React.ReactNode;
-	size?: string;
-	onClick: () => void;
-}
+import type { ModalBtnProps } from './types';
 
 export const ModalBtn: React.FC<ModalBtnProps> = ({ type, children, size, onClick }) => {
 	const btnClass = clsx(

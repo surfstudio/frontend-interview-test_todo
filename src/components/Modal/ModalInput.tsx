@@ -3,12 +3,7 @@ import React from 'react';
 
 /* APPLICATION */
 import important from '../../assets/images/important.svg';
-
-interface ModalInputProps {
-	name: string;
-	setName: React.Dispatch<React.SetStateAction<string>>;
-	size?: string;
-}
+import type { ModalInputProps } from './types';
 
 export const ModalInput: React.FC<ModalInputProps> = ({ name, setName, size }) => {
 	return (
