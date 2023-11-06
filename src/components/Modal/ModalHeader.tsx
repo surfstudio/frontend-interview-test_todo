@@ -11,7 +11,7 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
 	setActive,
 }) => {
 	return (
-		<header className="modal__content-header">
+		<div className="modal__content-header">
 			<h4 className="modal__content-title">{title}</h4>
 			<button
 				className="modal__content-header__btn"
@@ -22,6 +22,6 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
 			>
 				<img src={close} alt="иконка закрытия" />
 			</button>
-		</header>
+		</div>
 	);
 };
