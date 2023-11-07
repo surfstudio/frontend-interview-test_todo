@@ -13,13 +13,13 @@
 	margin: auto;
 	padding: 10px 20px;
 
-	border-bottom: 2px solid #3f72af;
+	border-bottom: 2px solid var(--primary-color);
 
 	gap: 20px;
 }
 
 .list-item:hover {
-	background-color: rgba(37, 127, 234, 0.2);
+	background-color: var(--line-color);
 }
 
 .list-item-col1 {
@@ -42,7 +42,7 @@
 
 	margin-right: 16px;
 
-	color: rgb(235, 98, 7);
+	color: var(--accent-color);
 }
 
 .list-item-col1-row1__category {
@@ -51,7 +51,7 @@
 
 	flex-grow: 1;
 
-	color: rgb(63, 114, 175);
+	color: var(--primary-color);
 }
 
 .list-item-col1-row1__category::before {
@@ -68,7 +68,7 @@
 	font-weight: 400;
 	line-height: 20px;
 
-	color: rgb(128, 128, 128);
+	color: var(--description-color);
 }
 
 .list-item-col2 {

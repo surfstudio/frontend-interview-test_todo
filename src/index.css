@@ -1,9 +1,23 @@
 @import url('./assets/fonts.css');
 
+:root {
+	--primary-color: rgb(63, 114, 175);
+	--accent-color: rgb(235, 98, 7);
+	--back-color: rgb(219, 226, 239);
+	--description-color: rgb(128, 128, 128);
+	--white-color: rgb(255, 255, 255);
+	--black-color: rgb(0, 0, 0);
+	--half-black-color: rgba(0, 0, 0, 0.5);
+	--modal-back-color: rgba(0, 0, 0, 0.4);
+	--error-color: rgba(128, 135, 145, 0.643);
+	--shadow-color: rgb(150, 175, 221);
+	--line-color: rgba(37, 127, 234, 0.2);
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 
-	background-color: rgb(219, 226, 239);
+	background-color: var(--back-color);
 
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
