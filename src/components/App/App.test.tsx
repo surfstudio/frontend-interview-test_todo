@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
-import { store } from '../../../src/store/store';
+import { store } from 'store/store';
 import App from './App';
 
 test('renders "ToDo List" title', () => {

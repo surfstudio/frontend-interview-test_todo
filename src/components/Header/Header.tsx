@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 /* APPLICATION */
-import { useCheckPath } from '../../hooks/useCheckPath';
+import { useCheckPath } from 'hooks/useCheckPath';
 import { ModalCreateItem } from '../Modal/ModalCreateItem';
 import './Header.css';
 

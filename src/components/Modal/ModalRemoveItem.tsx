@@ -2,10 +2,10 @@
 import React from 'react';
 
 /* APPLICATION */
-import { categoriesRemoved } from '../../store/categoriesSlice';
-import { tasksRemoved, tasksClearedCategories } from '../../store/tasksSlice';
-import { useCheckPath } from '../../hooks/useCheckPath';
-import { useAppDispatch } from '../../hooks/reduxTypedHooks';
+import { categoriesRemoved } from 'store/categoriesSlice';
+import { tasksRemoved, tasksClearedCategories } from 'store/tasksSlice';
+import { useCheckPath } from 'hooks/useCheckPath';
+import { useAppDispatch } from 'hooks/reduxTypedHooks';
 import { Modal } from './Modal';
 import { ModalHeader } from './ModalHeader';
 import { ModalFooter } from './ModalFooter';

@@ -2,7 +2,7 @@
 import React from 'react';
 
 /* APPLICATION */
-import close from '../../assets/images/close.svg';
+import close from 'assets/images/close.svg';
 import type { ModalHeaderProps } from './types';
 
 export const ModalHeader: React.FC<ModalHeaderProps> = ({

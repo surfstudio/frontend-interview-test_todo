@@ -1,8 +1,8 @@
 /* VENDOR */
 
 /* APPLICATION */
-import { selectAllTasks } from '../../store/tasksSlice';
-import { useAppSelector } from '../../hooks/reduxTypedHooks';
+import { selectAllTasks } from 'store/tasksSlice';
+import { useAppSelector } from 'hooks/reduxTypedHooks';
 import { ListItem } from './ListItem';
 
 export const Tasks = () => {

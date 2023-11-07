@@ -3,7 +3,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 /* APPLICATION */
-import important from '../../assets/images/important.svg';
+import important from 'assets/images/important.svg';
 import type { ModalInputProps } from './types';
 
 export const ModalInput: React.FC<ModalInputProps> = ({ name, setName, size }) => {
