@@ -4,15 +4,18 @@
 }
 
 .list-item {
-	box-sizing: border-box;
-	padding: 10px 20px;
-	margin: auto;
 	display: flex;
 	justify-content: space-between;
-	gap: 20px;
+
+	box-sizing: border-box;
 	max-width: 1000px;
 	min-height: 80px;
+	margin: auto;
+	padding: 10px 20px;
+
 	border-bottom: 2px solid #3f72af;
+
+	gap: 20px;
 }
 
 .list-item:hover {
@@ -31,33 +34,41 @@
 }
 
 .list-item-col1-row1__title {
-	font-weight: 500;
 	font-size: 18px;
+	font-weight: 500;
 	line-height: 20px;
-	color: #eb6207;
-	margin-right: 16px;
+
 	flex-grow: 1;
+
+	margin-right: 16px;
+
+	color: rgb(235, 98, 7);
 }
 
 .list-item-col1-row1__category {
-	font-weight: 400;
 	font-size: 18px;
-	color: #3f72af;
+	font-weight: 400;
+
 	flex-grow: 1;
+
+	color: rgb(63, 114, 175);
 }
 
 .list-item-col1-row1__category::before {
-	content: url('../../assets/images/folder.svg');
-	margin-right: 4px;
 	position: relative;
 	top: 3px;
+
+	margin-right: 4px;
+
+	content: url('../../assets/images/folder.svg');
 }
 
 .list-item-col1-row2 {
-	color: #808080;
-	font-weight: 400;
 	font-size: 18px;
+	font-weight: 400;
 	line-height: 20px;
+
+	color: rgb(128, 128, 128);
 }
 
 .list-item-col2 {
@@ -65,10 +76,12 @@
 }
 
 .list-item-col2__btn {
-	cursor: pointer;
 	box-sizing: border-box;
 	width: 25px;
 	height: 25px;
+
+	cursor: pointer;
+
 	border: none;
 	background: transparent;
 }

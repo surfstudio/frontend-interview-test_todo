@@ -1,33 +1,40 @@
 .modal {
-	height: 100vh;
-	width: 100vw;
-	background-color: rgba(0, 0, 0, 0.4);
 	position: fixed;
+	z-index: 1;
 	top: 0;
 	left: 0;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	opacity: 0;
+
+	width: 100vw;
+	height: 100vh;
+
 	pointer-events: none;
-	z-index: 1;
+
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal_active {
-	opacity: 1;
 	pointer-events: all;
+
+	opacity: 1;
 }
 
 .modal__content {
 	display: flex;
 	flex-direction: column;
+
 	box-sizing: border-box;
-	max-width: 600px;
 	width: 100%;
+	max-width: 600px;
 	padding: 24px;
-	background: #dbe2ef;
-	box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.5);
+
 	border-radius: 4px;
+	background: #dbe2ef;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .modal__content.small {
@@ -40,19 +47,23 @@
 }
 
 .modal__content-title {
-	font-style: normal;
-	font-weight: 500;
 	font-size: calc(clamp(15px, 7vw, 40px));
+	font-weight: 500;
+	font-style: normal;
 	line-height: calc(clamp(25px, 5vw, 56px));
-	color: #3f72af;
+
 	margin-bottom: 32px;
+
+	color: rgb(63, 114, 175);
 }
 
 .modal__content-header__btn {
-	cursor: pointer;
 	box-sizing: border-box;
 	width: 25px;
 	height: 25px;
+
+	cursor: pointer;
+
 	border: none;
 	background: transparent;
 }
@@ -62,12 +73,14 @@
 }
 
 .modal__content-text {
-	margin-bottom: 24px;
-	font-style: normal;
-	font-weight: 400;
 	font-size: calc(clamp(15px, 5vw, 20px));
+	font-weight: 400;
+	font-style: normal;
 	line-height: calc(clamp(15px, 5vw, 24px));
-	color: #000000;
+
+	margin-bottom: 24px;
+
+	color: rgb(0, 0, 0);
 }
 
 .modal__content-footer {
@@ -81,17 +94,19 @@
 }
 
 .modalinput {
+	font-size: calc(clamp(15px, 3vw, 20px));
+	font-weight: 400;
+	font-style: normal;
+	line-height: 46px;
+
 	box-sizing: border-box;
-	padding: 8px;
-	height: 46px;
 	width: 100%;
-	background: transparent;
+	height: 46px;
+	padding: 8px;
+
 	border: 2px solid #3f72af;
 	border-radius: 4px;
-	font-style: normal;
-	font-weight: 400;
-	font-size: calc(clamp(15px, 3vw, 20px));
-	line-height: 46px;
+	background: transparent;
 }
 
 .modalinput::placeholder {
@@ -99,9 +114,10 @@
 }
 
 .modalinput-wrapper {
+	position: relative;
+
 	box-sizing: border-box;
 	max-width: 364px;
-	position: relative;
 	margin-bottom: 34px;
 }
 
@@ -114,24 +130,28 @@
 }
 
 .dropdown-label {
-	font-style: normal;
-	display: inline-block;
-	background-color: #dbe2ef;
-	font-weight: 400;
-	padding: 4px;
 	font-size: calc(clamp(15px, 4vw, 18px));
+	font-weight: 400;
+	font-style: normal;
 	line-height: 20px;
-	color: #3f72af;
+
 	position: absolute;
-	left: 12px;
 	top: -15px;
+	left: 12px;
+
+	display: inline-block;
+
+	padding: 4px;
+
+	color: rgb(63, 114, 175);
+	background-color: rgb(219, 226, 239);
 }
 
 .modalinput-icon {
 	position: absolute;
-	left: 55px;
-	top: -11px;
 	z-index: 1;
+	top: -11px;
+	left: 55px;
 }
 
 .modaltextarea-wrapper {
@@ -139,19 +159,22 @@
 }
 
 .modaltextarea {
-	resize: none;
+	font-size: calc(clamp(15px, 3vw, 20px));
+	font-weight: 400;
+	font-style: normal;
+	line-height: 26px;
+
 	box-sizing: border-box;
 	width: 100%;
 	min-height: 72px;
 	margin-bottom: 24px;
-	background: transparent;
+	padding: 8px;
+
+	resize: none;
+
 	border: 2px solid #3f72af;
 	border-radius: 4px;
-	font-style: normal;
-	font-weight: 400;
-	font-size: calc(clamp(15px, 3vw, 20px));
-	line-height: 26px;
-	padding: 8px;
+	background: transparent;
 }
 
 .modaltextarea::placeholder {
@@ -163,30 +186,35 @@
 }
 
 .dropdown {
-	cursor: pointer;
+	position: relative;
+	z-index: 1;
+
 	box-sizing: border-box;
 	width: 364px;
 	width: calc(clamp(100%, 100%, 364px));
 	min-height: 24px;
-	position: relative;
-	z-index: 1;
+
+	cursor: pointer;
 }
 
 .dropdown .dropdown-btn {
-	box-sizing: border-box;
-	padding: 8px;
+	font-size: calc(clamp(15px, 3vw, 20px));
+	font-weight: 400;
+	font-style: normal;
+
 	display: flex;
+	overflow: hidden;
 	align-items: center;
 	justify-content: space-between;
-	background: #dbe2ef;
+
+	box-sizing: border-box;
+	height: 46px;
+	padding: 8px;
+
+	color: rgb(0, 0, 0);
 	border: 2px solid #3f72af;
 	border-radius: 4px;
-	font-style: normal;
-	font-weight: 400;
-	font-size: calc(clamp(15px, 3vw, 20px));
-	height: 46px;
-	color: #000;
-	overflow: hidden;
+	background: #dbe2ef;
 }
 
 .dropdown .dropdown-btn.placeholder {
@@ -194,29 +222,33 @@
 }
 
 .dropdown .dropdown-content {
-	box-sizing: border-box;
 	position: absolute;
 	top: 45px;
-	background: #dbe2ef;
+
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 364px;
+
 	border: 2px solid #3f72af;
 	border-radius: 4px;
-	max-width: 364px;
-	width: 100%;
+	background: #dbe2ef;
 }
 
 .dropdown .dropdown-content .dropdown-item {
 	position: relative;
 	left: -2px;
+
 	box-sizing: border-box;
-	padding: 10px;
-	max-width: 364px;
 	width: 100%;
+	max-width: 364px;
+	padding: 10px;
+
+	color: rgb(63, 114, 175);
 	border: none;
 	border-radius: 4px;
-	color: #3f72af;
 }
 
 .dropdown .dropdown-content .dropdown-item:hover {
-	background-color: #3f72ff;
-	color: #fff;
+	color: rgb(255, 255, 255);
+	background-color: rgb(63, 114, 255);
 }

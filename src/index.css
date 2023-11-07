@@ -1,12 +1,12 @@
 @import url('./assets/fonts.css');
 
 body {
-	background-color: #dbe2ef;
 	font-family: 'Roboto', sans-serif;
+
+	background-color: rgb(219, 226, 239);
 
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;

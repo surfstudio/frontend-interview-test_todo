@@ -1,20 +1,24 @@
 .modalbtn {
-	box-sizing: border-box;
-	min-height: 46px;
-	max-width: 120px;
-	width: 100%;
-	font-weight: 400;
 	font-size: calc(clamp(15px, 4vw, 20px));
+	font-weight: 400;
 	line-height: 46px;
-	color: #3f72af;
-	border: 2px solid #3f72af;
-	background: transparent;
-	border-radius: 4px;
+
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 120px;
+	min-height: 46px;
+
 	cursor: pointer;
+
+	color: rgb(63, 114, 175);
+	border: 2px solid rgb(63, 114, 175);
+	border-radius: 4px;
+	background: transparent;
 }
 
 .modalbtn:hover {
 	transform: scale(1.01);
+
 	box-shadow: 12px 5px rgb(150, 175, 221);
 }
 
@@ -23,21 +27,23 @@
 }
 
 .modalbtn.primary {
-	color: #fff;
-	background-color: #3f72af;
 	transition: background-color 0.5s ease-in-out;
+
+	color: rgb(255, 255, 255);
+	background-color: rgb(63, 114, 175);
 }
 
 .modalbtn.primary:disabled {
-	color: #0d161b;
-	background-color: #304055a4;
-	border: 1px dotted #00050a;
 	cursor: not-allowed;
-	box-shadow: none;
 	transform: none;
+
+	color: rgb(13, 22, 27);
+	border: 1px dotted rgb(0, 5, 10);
+	background-color: rgba(48, 64, 85, 0.643);
+	box-shadow: none;
 }
 
 .modalbtn.primary.large {
-	max-width: 200px;
 	width: 100%;
+	max-width: 200px;
 }
