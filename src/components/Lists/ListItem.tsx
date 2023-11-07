@@ -8,13 +8,7 @@ import edit from 'assets/images/edit.svg';
 import remove from 'assets/images/remove.svg';
 import { ModalEditItem } from '../Modal/ModalEditItem';
 import { ModalRemoveItem } from '../Modal/ModalRemoveItem';
-
-interface ListItemProps {
-	id: string;
-	name: string;
-	description: string;
-	category?: string;
-}
+import type { ListItemProps } from './types';
 
 export const ListItem: React.FC<ListItemProps> = ({
 	id,
