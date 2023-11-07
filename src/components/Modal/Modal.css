@@ -49,7 +49,6 @@
 .modal__content-title {
 	font-size: calc(clamp(15px, 7vw, 40px));
 	font-weight: 500;
-	font-style: normal;
 	line-height: calc(clamp(25px, 5vw, 56px));
 
 	margin-bottom: 32px;
@@ -75,7 +74,6 @@
 .modal__content-text {
 	font-size: calc(clamp(15px, 5vw, 20px));
 	font-weight: 400;
-	font-style: normal;
 	line-height: calc(clamp(15px, 5vw, 24px));
 
 	margin-bottom: 24px;
@@ -96,7 +94,6 @@
 .modalinput {
 	font-size: calc(clamp(15px, 3vw, 20px));
 	font-weight: 400;
-	font-style: normal;
 	line-height: 46px;
 
 	box-sizing: border-box;
@@ -132,7 +129,6 @@
 .dropdown-label {
 	font-size: calc(clamp(15px, 4vw, 18px));
 	font-weight: 400;
-	font-style: normal;
 	line-height: 20px;
 
 	position: absolute;
@@ -161,7 +157,6 @@
 .modaltextarea {
 	font-size: calc(clamp(15px, 3vw, 20px));
 	font-weight: 400;
-	font-style: normal;
 	line-height: 26px;
 
 	box-sizing: border-box;
@@ -200,7 +195,6 @@
 .dropdown .dropdown-btn {
 	font-size: calc(clamp(15px, 3vw, 20px));
 	font-weight: 400;
-	font-style: normal;
 
 	display: flex;
 	overflow: hidden;

@@ -29,12 +29,13 @@
 }
 
 .list-item-col1-row1 {
+	font-size: 18px;
+
 	display: flex;
 	align-items: center;
 }
 
 .list-item-col1-row1__title {
-	font-size: 18px;
 	font-weight: 500;
 	line-height: 20px;
 
@@ -46,7 +47,6 @@
 }
 
 .list-item-col1-row1__category {
-	font-size: 18px;
 	font-weight: 400;
 
 	flex-grow: 1;
