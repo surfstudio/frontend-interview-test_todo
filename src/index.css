@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
+@import url(components/ListItem/ListItem.css);
+@import url(components/Modal/Modal.css);
+@import url(components/ModalBtn/ModalBtn.css);
+
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -11,6 +15,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background-color: #dbe2ef;
 }
 
 code {
