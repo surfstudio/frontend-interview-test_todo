@@ -3,10 +3,7 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
-import { Modal } from "./Modal";
-import { ModalHeader } from "./ModalHeader";
-import { ModalText } from "./ModalText";
-import { ModalFooter } from "./ModalFooter";
+import { Modal, ModalHeader, ModalText, ModalFooter } from "../shared/ui/Modal";
 import { tasksRemoved, tasksClearedCategories } from "../features/tasksSlice";
 import { categoriesRemoved } from "../features/categoriesSlice";
 

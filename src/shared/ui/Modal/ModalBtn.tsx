@@ -1,3 +1,5 @@
+import React from "react";
+
 import "./ModalBtn.css";
 
 interface ModalBtnProps {

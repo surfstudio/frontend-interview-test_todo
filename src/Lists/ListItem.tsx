@@ -1,10 +1,10 @@
 /* VENDOR */
-import { useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 /* APPLICATION */
-import edit from "../icons/edit.svg";
-import remove from "../icons/remove.svg";
+import edit from "../assets/icons/edit.svg";
+import remove from "../assets/icons/remove.svg";
 import { selectAllCategories } from "../features/categoriesSlice";
 import { ModalEditItem } from "../Modal/ModalEditItem";
 import { ModalRemoveItem } from "../Modal/ModalRemoveItem";

@@ -1,3 +1,7 @@
+import React from "react";
+
+import './ModalTextarea.css'
+
 interface ModalTextareaProps {
   description: string;
   setDescription: React.Dispatch<React.SetStateAction<string>>;
@@ -8,7 +12,7 @@ export const ModalTextarea: React.FC<ModalTextareaProps> = ({
   setDescription,
 }) => {
   return (
-    <div className="modaltextarea-wrapper">
+    <div className="textarea-wrapper">
       <label htmlFor="modaltextarea">Описание</label>
       <textarea
         id="modaltextarea"

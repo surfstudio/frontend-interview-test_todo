@@ -1,4 +1,8 @@
-import important from "../icons/important.svg";
+import React from "react";
+
+/* APPLICATION */
+import important from "../../../assets/icons/important.svg";
+import './ModalInput.css'
 
 interface ModalInputProps {
   name: string;
@@ -13,9 +17,7 @@ export const ModalInput: React.FC<ModalInputProps> = ({
 }) => {
   return (
     <div
-      className={
-        size === "large" ? "modalinput-wrapper large" : "modalinput-wrapper"
-      }
+      className={`wrapper ${size && "large"}`}
     >
       <input
         id="modalinput"
@@ -24,7 +26,7 @@ export const ModalInput: React.FC<ModalInputProps> = ({
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <img src={important} alt="important" className="modalinput-icon" />
+      <img src={important} alt="important" className="icon" />
       <label htmlFor="modalinput">Имя</label>
     </div>
   );

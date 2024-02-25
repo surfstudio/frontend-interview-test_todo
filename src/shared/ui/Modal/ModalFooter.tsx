@@ -1,4 +1,8 @@
-import { ModalBtn } from "./ModalBtn";
+import React from "react";
+
+/* APPLICATION */
+import { ModalBtn } from "./";
+import './ModalFooter.css'
 
 interface ModalFooterProps {
   clearState?(): void;
@@ -16,7 +20,7 @@ export const ModalFooter: React.FC<ModalFooterProps> = ({
   onSubmit,
 }) => {
   return (
-    <footer className="modal__content-footer">
+    <footer className="footer">
       <ModalBtn type="primary" size={size || ""} onClick={onSubmit}>
         {submitBtnText}
       </ModalBtn>

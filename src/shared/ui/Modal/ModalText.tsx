@@ -1,3 +1,7 @@
+import React from "react";
+
+import './ModalText.css'
+
 interface ModalTextProps {
   text: string;
 }

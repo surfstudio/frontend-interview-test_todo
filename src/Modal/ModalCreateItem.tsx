@@ -4,12 +4,7 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
-import { Modal } from "./Modal";
-import { ModalHeader } from "./ModalHeader";
-import { ModalInput } from "./ModalInput";
-import { ModalRow } from "./ModalRow";
-import { ModalTextarea } from "./ModalTextarea";
-import { ModalFooter } from "./ModalFooter";
+import { Modal, ModalHeader, ModalInput, ModalRow, ModalTextarea, ModalFooter } from "../shared/ui/Modal";
 import { tasksAdded } from "../features/tasksSlice";
 import { categoriesAdded } from "../features/categoriesSlice";
 

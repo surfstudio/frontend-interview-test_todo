@@ -1,4 +1,8 @@
-import close from "../icons/close.svg";
+import React from "react";
+
+/* APPLICATION */
+import close from "../../../assets/icons/close.svg";
+import './ModalHeader.css'
 
 interface ModalHeaderProps {
   clearState?(): void;
@@ -12,10 +16,10 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
   setActive,
 }) => {
   return (
-    <header className="modal__content-header">
-      <h4 className="modal__content-title">{title}</h4>
+    <header className="modal-header">
+      <h4 className="title">{title}</h4>
       <button
-        className="modal__content-header__btn"
+        className="close-btn"
         onClick={() => {
           clearState && clearState();
           setActive(false);
