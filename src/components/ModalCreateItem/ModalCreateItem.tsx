@@ -60,7 +60,7 @@ export const ModalCreateItem: FC<ModalCreateItemProps> = ({ active, setActive })
 										: tasksAdded({
 												name,
 												description,
-												category: setSelected,
+												category: selected ? selected : '',
 											})
 								);
 								clearState();
