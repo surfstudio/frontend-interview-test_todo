@@ -1,17 +1,12 @@
 /* VENDOR */
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
-import { Modal } from "../shared/ui/Modal/Modal";
-import { ModalHeader } from "../shared/ui/Modal/ModalHeader";
-import { ModalRow } from "../shared/ui/Modal/ModalRow";
-import { ModalInput } from "../shared/ui/Modal/ModalInput";
-import { ModalTextarea } from "../shared/ui/Modal/ModalTextarea";
-import { ModalFooter } from "../shared/ui/Modal/ModalFooter";
-import { tasksUpdated } from "../features/tasksSlice";
-import { categoriesUpdated } from "../features/categoriesSlice";
+import { Modal, ModalHeader, ModalRow, ModalInput, ModalTextarea, ModalFooter } from "../../shared/ui/Modal";
+import { tasksUpdated } from "../../pages/Tasks/tasksSlice";
+import { categoriesUpdated } from "../../pages/Categories/categoriesSlice";
 
 interface ModalEditItemProps {
   item: {

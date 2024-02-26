@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
-import { Modal, ModalHeader, ModalText, ModalFooter } from "../shared/ui/Modal";
-import { tasksRemoved, tasksClearedCategories } from "../features/tasksSlice";
-import { categoriesRemoved } from "../features/categoriesSlice";
+import { Modal, ModalHeader, ModalText, ModalFooter } from "../../shared/ui/Modal";
+import { tasksRemoved, tasksClearedCategories } from "../../pages/Tasks/tasksSlice";
+import { categoriesRemoved } from "../../pages/Categories/categoriesSlice";
 
 interface ModalRemoveItemProps {
   item: {

@@ -2,8 +2,8 @@
 import { useSelector } from "react-redux";
 
 /* APPLICATION */
-import { ListItem } from "./ListItem";
-import { selectAllCategories } from "../features/categoriesSlice";
+import { ListItem } from "../../shared/ui/ListItem";
+import { selectAllCategories } from "./categoriesSlice";
 
 export const Categories = () => {
   const categories = useSelector(selectAllCategories);

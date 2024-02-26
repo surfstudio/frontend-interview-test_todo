@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
-import { Modal, ModalHeader, ModalInput, ModalRow, ModalTextarea, ModalFooter } from "../shared/ui/Modal";
-import { tasksAdded } from "../features/tasksSlice";
-import { categoriesAdded } from "../features/categoriesSlice";
+import { Modal, ModalHeader, ModalInput, ModalRow, ModalTextarea, ModalFooter } from "../../shared/ui/Modal";
+import { tasksAdded } from "../../pages/Tasks/tasksSlice";
+import { categoriesAdded } from "../../pages/Categories/categoriesSlice";
 
 interface ModalCreateItemProps {
   active: boolean;

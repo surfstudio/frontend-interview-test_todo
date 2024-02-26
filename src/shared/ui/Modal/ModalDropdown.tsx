@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 /* APPLICATION */
 import down from "../../../assets/icons/down.svg";
-import { selectAllCategories } from "../../../features/categoriesSlice";
+import { selectAllCategories } from "../../../pages/Categories/categoriesSlice";
 import "./ModalDropdown.css"
 
 interface ModalDropdownProps {

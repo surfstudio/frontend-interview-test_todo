@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 /* APPLICATION */
-import edit from "../assets/icons/edit.svg";
-import remove from "../assets/icons/remove.svg";
-import { selectAllCategories } from "../features/categoriesSlice";
-import { ModalEditItem } from "../Modal/ModalEditItem";
-import { ModalRemoveItem } from "../Modal/ModalRemoveItem";
+import edit from "../../../assets/icons/edit.svg";
+import remove from "../../../assets/icons/remove.svg";
+import { selectAllCategories } from "../../../pages/Categories/categoriesSlice";
+import { ModalEditItem } from "../../../features/ModalEditItem/ModalEditItem";
+import { ModalRemoveItem } from "../../../features/ModalRemoveItem/ModalRemoveItem";
+import './ListItem.css'
 
 interface ListItemProps {
   item: {
@@ -26,11 +27,11 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
   return (
     <>
       <li className="list-item">
-        <div className="list-item-col1">
-          <div className="list-item-col1-row1">
-            <h3 className="list-item-col1-row1__title">{item.name}</h3>
+        <div className="list-item-container">
+          <div className="titleContainer">
+            <h3 className="itemTitle">{item.name}</h3>
             {item.category && (
-              <span className="list-item-col1-row1__category">
+              <span className="itemCategory">
                 {
                   categories.find((category) => category.id === item.category)
                     ?.name
@@ -38,11 +39,11 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
               </span>
             )}
           </div>
-          <div className="list-item-col1-row2">{item.description}</div>
+          <div className="itemDescription">{item.description}</div>
         </div>
-        <div className="list-item-col2">
+        <div className="buttonContainer">
           <button
-            className="list-item-col2__btn"
+            className="itemBtn"
             onClick={() => {
               setEditModalActive(true);
             }}
@@ -50,7 +51,7 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
             <img src={edit} alt="edit" />
           </button>
           <button
-            className="list-item-col2__btn"
+            className="itemBtn"
             onClick={() => {
               removeModalActive = true;
             }}
