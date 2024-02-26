@@ -1,12 +1,12 @@
 /* VENDOR */
-import { useSelector } from "react-redux";
 
 /* APPLICATION */
 import { ListItem } from "../../shared/ui/ListItem";
 import { selectAllCategories } from "./categoriesSlice";
+import {useAppSelector} from "../../app/hooks/hooks";
 
 export const Categories = () => {
-  const categories = useSelector(selectAllCategories);
+  const categories = useAppSelector(selectAllCategories);
 
   return (
     <ul>
