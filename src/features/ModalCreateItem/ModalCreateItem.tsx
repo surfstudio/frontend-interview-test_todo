@@ -1,5 +1,5 @@
 /* VENDOR */
-import { useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
@@ -7,11 +7,7 @@ import { Modal, ModalHeader, ModalInput, ModalRow, ModalTextarea, ModalFooter } 
 import { tasksAdded } from "../../pages/Tasks/tasksSlice";
 import { categoriesAdded } from "../../pages/Categories/categoriesSlice";
 import {useAppDispatch} from "../../app/hooks/hooks";
-
-interface ModalCreateItemProps {
-  active: boolean;
-  setActive: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import {ModalCreateItemProps} from "../../shared/types/item";
 
 export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
   active,

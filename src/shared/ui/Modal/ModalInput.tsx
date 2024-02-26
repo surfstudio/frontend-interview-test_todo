@@ -3,10 +3,9 @@ import React from "react";
 /* APPLICATION */
 import important from "../../../assets/icons/important.svg";
 import './ModalInput.css'
+import {ModalNameProps} from "../../types/item";
 
-interface ModalInputProps {
-  name: string;
-  setName: React.Dispatch<React.SetStateAction<string>>;
+interface ModalInputProps extends ModalNameProps{
   size?: string;
 }
 

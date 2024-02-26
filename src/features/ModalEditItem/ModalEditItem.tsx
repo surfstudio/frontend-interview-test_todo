@@ -7,17 +7,8 @@ import { Modal, ModalHeader, ModalRow, ModalInput, ModalTextarea, ModalFooter } 
 import { tasksUpdated } from "../../pages/Tasks/tasksSlice";
 import { categoriesUpdated } from "../../pages/Categories/categoriesSlice";
 import {useAppDispatch} from "../../app/hooks/hooks";
+import {ModalEditItemProps} from "../../shared/types/item";
 
-interface ModalEditItemProps {
-  item: {
-    id: string;
-    name: string;
-    description: string;
-    category?: string;
-  };
-  active: boolean;
-  setActive: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 export const ModalEditItem: React.FC<ModalEditItemProps> = ({
   item,

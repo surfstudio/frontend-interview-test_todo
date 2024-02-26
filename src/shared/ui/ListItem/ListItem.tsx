@@ -9,14 +9,10 @@ import { ModalEditItem } from "../../../features/ModalEditItem/ModalEditItem";
 import { ModalRemoveItem } from "../../../features/ModalRemoveItem/ModalRemoveItem";
 import './ListItem.css'
 import {useAppSelector} from "../../../app/hooks/hooks";
+import {Item} from "../../types/item";
 
 interface ListItemProps {
-  item: {
-    id: string;
-    name: string;
-    description: string;
-    category?: string;
-  };
+  item: Item;
 }
 
 export const ListItem: React.FC<ListItemProps> = ({ item }) => {

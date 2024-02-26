@@ -6,11 +6,7 @@ import down from "../../../assets/icons/down.svg";
 import { selectAllCategories } from "../../../pages/Categories/categoriesSlice";
 import "./ModalDropdown.css"
 import {useAppSelector} from "../../../app/hooks/hooks";
-
-interface ModalDropdownProps {
-  selected: string | undefined;
-  setSelected: React.Dispatch<React.SetStateAction<string>>;
-}
+import {ModalDropdownProps} from "../../types/item";
 
 export const ModalDropdown: React.FC<ModalDropdownProps> = ({
   selected,
