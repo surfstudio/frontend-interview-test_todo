@@ -4,7 +4,6 @@
   width: 120px;
   font-weight: 400;
   font-size: 20px;
-  line-height: 46px;
   color: #3f72af;
   border: 2px solid #3f72af;
   background: transparent;
@@ -12,15 +11,21 @@
   cursor: pointer;
 }
 
+.modalbtn:hover {
+  color: #ffffff;
+  background-color: #3f72af;
+  transition: all 300ms;
+}
+
 .modalbtn:first-child {
   margin-right: 24px;
 }
 
-.modalbtn.primary {
+.primary {
   color: #fff;
   background-color: #3f72af;
 }
 
-.modalbtn.primary.large {
+.primary.large {
   width: 200px;
 }

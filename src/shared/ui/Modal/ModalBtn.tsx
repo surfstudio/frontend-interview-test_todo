@@ -15,12 +15,7 @@ export const ModalBtn: React.FC<ModalBtnProps> = ({
   size,
   onClick,
 }) => {
-  const btnClass =
-    type === "primary"
-      ? size === "large"
-        ? "modalbtn primary large"
-        : "modalbtn primary"
-      : "modalbtn";
+  const btnClass = `modalbtn ${type && "primary"} ${size && "large"}`;
   return (
     <button className={btnClass} onClick={onClick}>
       {children}
