@@ -21,6 +21,7 @@
     font-size: 20px;
     height: 46px;
     color: #000;
+    overflow: auto;
 }
 
 .placeholder {
@@ -55,7 +56,7 @@
 
 [for="modalinput"],
 [for="modaltextarea"],
-.label {
+.item-label {
     font-style: normal;
     display: inline-block;
     background-color: #dbe2ef;

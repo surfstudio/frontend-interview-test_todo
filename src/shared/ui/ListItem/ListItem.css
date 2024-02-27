@@ -5,8 +5,9 @@
     display: flex;
     justify-content: space-between;
     width: 1000px;
-    height: 80px;
+    height: 100%;
     border-bottom: 2px solid #3f72af;
+    word-break: break-all;
 }
 
 .list-item:hover {
