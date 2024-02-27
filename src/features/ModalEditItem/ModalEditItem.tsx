@@ -28,7 +28,7 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
     [selected, setSelected] = useState(item.category || ""),
     [description, setDescription] = useState(item.description);
 
-  const handleSumbit = () => {
+  const handleSubmit = () => {
     if (isCategories) {
       dispatch(categoriesUpdated({ id: item.id, name, description }));
     } else {
@@ -69,7 +69,7 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
         setActive={setActive}
         submitBtnText="Сохранить"
         size="large"
-        onSubmit={handleSumbit}
+        onSubmit={handleSubmit}
       />
     </Modal>
   );
