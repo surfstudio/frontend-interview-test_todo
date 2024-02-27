@@ -17,8 +17,8 @@ export const ModalDropdown: React.FC<ModalDropdownProps> = ({
 
   return (
     <div className="dropdown" onClick={() => setIsActive(!isActive)}>
-      <span className="label">Категория</span>
-      <div className={selected ? "dropdown-btn" : "placeholder"}>
+      <span className="item-label">Категория</span>
+      <div className={`dropdown-btn ${!selected && "placeholder"}`}>
         {options.find((option) => option.id === selected)?.name ||
           "Выберите категорию"}
         <img src={down} alt="open dropdown" />
@@ -27,7 +27,7 @@ export const ModalDropdown: React.FC<ModalDropdownProps> = ({
         <div className="content">
           {options.map((option) => (
             <div
-              className="item"
+              className = {`item ${selected === option.id}`}
               onClick={() => {
                 setSelected(option.id);
                 setIsActive(false);

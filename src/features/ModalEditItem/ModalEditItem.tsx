@@ -3,12 +3,18 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
-import { Modal, ModalHeader, ModalRow, ModalInput, ModalTextarea, ModalFooter } from "../../shared/ui/Modal";
+import {
+  Modal,
+  ModalHeader,
+  ModalRow,
+  ModalInput,
+  ModalTextarea,
+  ModalFooter,
+} from "../../shared/ui/Modal";
 import { tasksUpdated } from "../../pages/Tasks/tasksSlice";
 import { categoriesUpdated } from "../../pages/Categories/categoriesSlice";
-import {useAppDispatch} from "../../app/hooks/hooks";
-import {ModalEditItemProps} from "../../shared/types/item";
-
+import { useAppDispatch } from "../../app/hooks/hooks";
+import { ModalEditItemProps } from "../../shared/types/item";
 
 export const ModalEditItem: React.FC<ModalEditItemProps> = ({
   item,
@@ -22,6 +28,21 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
     [selected, setSelected] = useState(item.category || ""),
     [description, setDescription] = useState(item.description);
 
+  const handleSumbit = () => {
+    if (isCategories) {
+      dispatch(categoriesUpdated({ id: item.id, name, description }));
+    } else {
+      dispatch(
+        tasksUpdated({
+          id: item.id,
+          name,
+          description,
+          category: selected,
+        }),
+      );
+    }
+    setActive(false);
+  };
   return (
     <Modal item={item} active={active} setActive={setActive}>
       <ModalHeader
@@ -48,19 +69,7 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
         setActive={setActive}
         submitBtnText="Сохранить"
         size="large"
-        onSubmit={() => {
-          dispatch(
-            isCategories
-              ? categoriesUpdated({ id: item.id, name, description })
-              : tasksUpdated({
-                  id: item.id,
-                  name,
-                  description,
-                  category: selected,
-                })
-          );
-          setActive(false);
-        }}
+        onSubmit={handleSumbit}
       />
     </Modal>
   );
