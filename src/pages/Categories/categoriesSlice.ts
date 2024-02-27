@@ -4,12 +4,9 @@ import { v4 as uuidv4 } from "uuid";
 
 /* APPLICATION */
 import { RootState } from "../../app/store/store";
+import {Item} from "../../shared/types/item";
 
-export interface CategoriesState {
-  id: string;
-  name: string;
-  description: string;
-}
+type CategoriesState = Omit<Item, "category">
 
 const initialState: CategoriesState[] = [
   {
@@ -33,13 +30,13 @@ export const categoriesSlice = createSlice({
   name: "categories",
   initialState,
   reducers: {
-    categoriesAdded: (state, action) => {
+    categoriesAdded: (state, action: PayloadAction<Omit<CategoriesState, "id">>) => {
       state.push({
         id: uuidv4(),
         ...action.payload,
       });
     },
-    categoriesUpdated: (state, action) => {
+    categoriesUpdated: (state, action: PayloadAction<CategoriesState>) => {
       const { id, name, description } = action.payload,
         existingCategory = state.find((category) => category.id === id);
 
@@ -50,9 +47,9 @@ export const categoriesSlice = createSlice({
     },
     categoriesRemoved: (
       state: CategoriesState[],
-      action: PayloadAction<string>
+      action: PayloadAction<CategoriesState["id"]>
     ) => {
-      let rm = (el: CategoriesState, i: number, arr: CategoriesState[]) =>
+      let rm = (el: CategoriesState) =>
           el.id === action.payload,
         rmTaskIndex = state.findIndex(rm);
 
