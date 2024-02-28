@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 
 /* APPLICATION */
-import down from "../icons/down.svg";
+import down from "../../../icons/down.svg";
 import { selectAllCategories } from "../../../features/categoriesSlice";
 
 interface ModalDropdownProps {
