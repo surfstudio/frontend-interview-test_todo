@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { ListItem } from "./ListItem";
 import { selectAllCategories } from "../features/categoriesSlice";
 
-export const Categories = () => {
+export const Categories: React.FC = () => {
   const categories = useSelector(selectAllCategories);
 
   return (

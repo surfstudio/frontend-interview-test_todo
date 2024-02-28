@@ -8,21 +8,35 @@ import remove from "../icons/remove.svg";
 import { selectAllCategories } from "../features/categoriesSlice";
 import { ModalEditItem } from "../Modal/ModalEditItem";
 import { ModalRemoveItem } from "../Modal/ModalRemoveItem";
+import "./List.css";
+
+export interface ItemProps {
+  id: string;
+  name: string;
+  description: string;
+  category?: string;
+}
 
 interface ListItemProps {
-  item: {
-    id: string;
-    name: string;
-    description: string;
-    category?: string;
-  };
+  item: ItemProps;
 }
 
 export const ListItem: React.FC<ListItemProps> = ({ item }) => {
   const { name, description, category } = item;
   const categories = useSelector(selectAllCategories);
-  const [editModalActive, setEditModalActive] = useState<boolean>(false);
-  const [removeModalActive, setRemoveModalActive] = useState<boolean>(false);
+  const [isEditModalActive, setIsEditModalActive] = useState<boolean>(false);
+  const [isRemoveModalActive, setIsRemoveModalActive] =
+    useState<boolean>(false);
+
+  const currentCategory = categories.find((item) => item.id === category)?.name;
+
+  const handleEdit = () => {
+    setIsEditModalActive(true);
+  };
+
+  const handleRemove = () => {
+    setIsRemoveModalActive(true);
+  };
 
   return (
     <>
@@ -32,39 +46,29 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
             <h3 className="list-item-col1-row1__title">{name}</h3>
             {category && (
               <span className="list-item-col1-row1__category">
-                {categories.find((item) => item.id === category)?.name}
+                {currentCategory}
               </span>
             )}
           </div>
           <div className="list-item-col1-row2">{description}</div>
         </div>
         <div className="list-item-col2">
-          <button
-            className="list-item-col2__btn"
-            onClick={() => {
-              setEditModalActive(true);
-            }}
-          >
+          <button className="list-item-col2__btn" onClick={handleEdit}>
             <img src={edit} alt="edit" />
           </button>
-          <button
-            className="list-item-col2__btn"
-            onClick={() => {
-              setRemoveModalActive(true);
-            }}
-          >
+          <button className="list-item-col2__btn" onClick={handleRemove}>
             <img src={remove} alt="remove" />
           </button>
         </div>
         <ModalEditItem
           item={item}
-          active={editModalActive}
-          setActive={setEditModalActive}
+          active={isEditModalActive}
+          setActive={setIsEditModalActive}
         />
         <ModalRemoveItem
           item={item}
-          active={removeModalActive}
-          setActive={setRemoveModalActive}
+          active={isRemoveModalActive}
+          setActive={setIsRemoveModalActive}
         />
       </li>
     </>
