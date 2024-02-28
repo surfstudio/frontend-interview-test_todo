@@ -20,8 +20,8 @@ interface ListItemProps {
 
 export const ListItem: React.FC<ListItemProps> = ({ item }) => {
   const categories = useSelector(selectAllCategories);
-  const [editModalActive, setEditModalActive] = useState(false);
-  const [removeModalActive, setRemoveModalActive] = useState(false);
+  const [editModalActive, setEditModalActive] = useState<boolean>(false);
+  const [removeModalActive, setRemoveModalActive] = useState<boolean>(false);
 
   return (
     <>
