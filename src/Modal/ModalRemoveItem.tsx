@@ -4,9 +4,9 @@ import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
 import { Modal } from "./Modal";
-import { ModalHeader } from "./ModalHeader";
-import { ModalText } from "./ModalText";
-import { ModalFooter } from "./ModalFooter";
+import { ModalHeader } from "./ModalComponents/ModalHeader/ModalHeader";
+import { ModalText } from "./ModalComponents/ModalText/ModalText";
+import { ModalFooter } from "./ModalComponents/ModalFooter/ModalFooter";
 import { tasksRemoved, tasksClearedCategories } from "../features/tasksSlice";
 import { categoriesRemoved } from "../features/categoriesSlice";
 
@@ -32,7 +32,7 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = (props) => {
   const text = `Вы уверены, что хотите удалить задачу "${name}"?`;
 
   return (
-    <Modal item={item} active={active} setActive={setActive}>
+    <Modal isActive={active} setIsActive={setActive}>
       <ModalHeader setActive={setActive} title={"Удаление задачи"} />
       <ModalText text={text} />
       <ModalFooter

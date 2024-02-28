@@ -5,29 +5,22 @@ import React from "react";
 import "./Modal.css";
 
 interface ModalProps {
-  item?: {
-    id: string;
-    name: string;
-    description: string;
-    category?: string;
-  };
-  active: boolean;
-  setActive: React.Dispatch<React.SetStateAction<boolean>>;
+  isActive: boolean;
+  setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
   clearState?(): void;
 }
 
 export const Modal: React.FC<ModalProps> = (props) => {
-  const { clearState, active, setActive, children } = props;
+  const { clearState, isActive, setIsActive, children } = props;
+
+  const handleClose = () => {
+    clearState && clearState();
+    setIsActive(false);
+  };
 
   return (
-    <div
-      className={active ? "modal active" : "modal"}
-      onClick={() => {
-        clearState && clearState();
-        setActive(false);
-      }}
-    >
+    <div className={isActive ? "modal active" : "modal"} onClick={handleClose}>
       <div className="modal__content" onClick={(e) => e.stopPropagation()}>
         {children}
       </div>

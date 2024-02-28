@@ -1,5 +1,5 @@
-import { ModalInput } from "./ModalInput";
-import { ModalDropdown } from "./ModalDropdown";
+import { ModalInput } from "../ModalInput/ModalInput";
+import { ModalDropdown } from "../ModalDropdown/ModalDropdown";
 
 interface ModalRowProps {
   name: string;

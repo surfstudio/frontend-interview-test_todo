@@ -5,11 +5,11 @@ import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
 import { Modal } from "./Modal";
-import { ModalHeader } from "./ModalHeader";
-import { ModalInput } from "./ModalInput";
-import { ModalRow } from "./ModalRow";
-import { ModalTextarea } from "./ModalTextarea";
-import { ModalFooter } from "./ModalFooter";
+import { ModalHeader } from "./ModalComponents/ModalHeader/ModalHeader";
+import { ModalInput } from "./ModalComponents/ModalInput/ModalInput";
+import { ModalRow } from "./ModalComponents/ModalRow/ModalRow";
+import { ModalTextarea } from "./ModalComponents/ModalTextarea/ModalTextarea";
+import { ModalFooter } from "./ModalComponents/ModalFooter/ModalFooter";
 import { tasksAdded } from "../features/tasksSlice";
 import { categoriesAdded } from "../features/categoriesSlice";
 
@@ -36,7 +36,7 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
   }
 
   return (
-    <Modal active={active} setActive={setActive} clearState={clearState}>
+    <Modal isActive={active} setIsActive={setActive} clearState={clearState}>
       <ModalHeader
         clearState={clearState}
         setActive={setActive}

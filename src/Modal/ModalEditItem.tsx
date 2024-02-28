@@ -5,11 +5,11 @@ import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
 import { Modal } from "./Modal";
-import { ModalHeader } from "./ModalHeader";
-import { ModalRow } from "./ModalRow";
-import { ModalInput } from "./ModalInput";
-import { ModalTextarea } from "./ModalTextarea";
-import { ModalFooter } from "./ModalFooter";
+import { ModalHeader } from "./ModalComponents/ModalHeader/ModalHeader";
+import { ModalRow } from "./ModalComponents/ModalRow/ModalRow";
+import { ModalInput } from "./ModalComponents/ModalInput/ModalInput";
+import { ModalTextarea } from "./ModalComponents/ModalTextarea/ModalTextarea";
+import { ModalFooter } from "./ModalComponents/ModalFooter/ModalFooter";
 import { tasksUpdated } from "../features/tasksSlice";
 import { categoriesUpdated } from "../features/categoriesSlice";
 
@@ -35,7 +35,7 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = (props) => {
   const [description, setDescription] = useState<string>(item.description);
 
   return (
-    <Modal item={item} active={active} setActive={setActive}>
+    <Modal isActive={active} setIsActive={setActive}>
       <ModalHeader
         setActive={setActive}
         title={
