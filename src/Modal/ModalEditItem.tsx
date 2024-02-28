@@ -24,11 +24,9 @@ interface ModalEditItemProps {
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const ModalEditItem: React.FC<ModalEditItemProps> = ({
-  item,
-  active,
-  setActive,
-}) => {
+export const ModalEditItem: React.FC<ModalEditItemProps> = (props) => {
+  const { item, active, setActive } = props;
+
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const isCategories = pathname.includes("categories");

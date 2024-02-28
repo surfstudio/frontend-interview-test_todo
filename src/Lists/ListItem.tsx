@@ -19,6 +19,7 @@ interface ListItemProps {
 }
 
 export const ListItem: React.FC<ListItemProps> = ({ item }) => {
+  const { name, description, category } = item;
   const categories = useSelector(selectAllCategories);
   const [editModalActive, setEditModalActive] = useState<boolean>(false);
   const [removeModalActive, setRemoveModalActive] = useState<boolean>(false);
@@ -28,17 +29,14 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
       <li className="list-item">
         <div className="list-item-col1">
           <div className="list-item-col1-row1">
-            <h3 className="list-item-col1-row1__title">{item.name}</h3>
-            {item.category && (
+            <h3 className="list-item-col1-row1__title">{name}</h3>
+            {category && (
               <span className="list-item-col1-row1__category">
-                {
-                  categories.find((category) => category.id === item.category)
-                    ?.name
-                }
+                {categories.find((item) => item.id === category)?.name}
               </span>
             )}
           </div>
-          <div className="list-item-col1-row2">{item.description}</div>
+          <div className="list-item-col1-row2">{description}</div>
         </div>
         <div className="list-item-col2">
           <button

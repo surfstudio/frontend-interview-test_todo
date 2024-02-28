@@ -17,12 +17,9 @@ interface ModalProps {
   clearState?(): void;
 }
 
-export const Modal: React.FC<ModalProps> = ({
-  clearState,
-  active,
-  setActive,
-  children,
-}) => {
+export const Modal: React.FC<ModalProps> = (props) => {
+  const { clearState, active, setActive, children } = props;
+
   return (
     <div
       className={active ? "modal active" : "modal"}

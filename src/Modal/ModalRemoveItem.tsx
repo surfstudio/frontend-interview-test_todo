@@ -21,15 +21,15 @@ interface ModalRemoveItemProps {
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
-  item,
-  active,
-  setActive,
-}) => {
+export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = (props) => {
+  const { item, active, setActive } = props;
+
+  const { id, name } = item;
+
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const isCategories = pathname.includes("categories");
-  const text = `Вы уверены, что хотите удалить задачу "${item.name}"?`;
+  const text = `Вы уверены, что хотите удалить задачу "${name}"?`;
 
   return (
     <Modal item={item} active={active} setActive={setActive}>
@@ -41,10 +41,10 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
         onSubmit={
           isCategories
             ? () => {
-                dispatch(categoriesRemoved(item.id));
-                dispatch(tasksClearedCategories(item.id));
+                dispatch(categoriesRemoved(id));
+                dispatch(tasksClearedCategories(id));
               }
-            : () => dispatch(tasksRemoved(item.id))
+            : () => dispatch(tasksRemoved(id))
         }
       />
     </Modal>

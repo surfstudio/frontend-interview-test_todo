@@ -8,13 +8,9 @@ interface ModalFooterProps {
   onSubmit: () => void;
 }
 
-export const ModalFooter: React.FC<ModalFooterProps> = ({
-  clearState,
-  setActive,
-  submitBtnText,
-  size,
-  onSubmit,
-}) => {
+export const ModalFooter: React.FC<ModalFooterProps> = (props) => {
+  const { clearState, setActive, submitBtnText, size, onSubmit } = props;
+
   return (
     <footer className="modal__content-footer">
       <ModalBtn type="primary" size={size || ""} onClick={onSubmit}>

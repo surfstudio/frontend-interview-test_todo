@@ -7,12 +7,9 @@ interface ModalBtnProps {
   onClick: () => void;
 }
 
-export const ModalBtn: React.FC<ModalBtnProps> = ({
-  type,
-  children,
-  size,
-  onClick,
-}) => {
+export const ModalBtn: React.FC<ModalBtnProps> = (props) => {
+  const { type, children, size, onClick } = props;
+
   const btnClass =
     type === "primary"
       ? size === "large"
