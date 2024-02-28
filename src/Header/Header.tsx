@@ -7,9 +7,16 @@ import "./Header.css";
 import { ModalCreateItem } from "../Modal/ModalCreateItem";
 
 export const Header = () => {
+  const [isModalActive, setIsModalActive] = useState<boolean>(false);
+
   const { pathname } = useLocation();
   const isCategories = pathname.includes("categories");
-  const [createModalActive, setCreateModalActive] = useState<boolean>(false);
+
+  const buttonText = isCategories ? "Добавить категорию" : "Добавить задачу";
+
+  const handleActive = () => {
+    setIsModalActive(true);
+  };
 
   return (
     <header className="header">
@@ -35,19 +42,11 @@ export const Header = () => {
             <Link to="categories">Категории</Link>
           </li>
         </ul>
-        <button
-          className="header-button"
-          onClick={() => {
-            setCreateModalActive(true);
-          }}
-        >
-          {isCategories ? "Добавить категорию" : "Добавить задачу"}
+        <button className="header-button" onClick={handleActive}>
+          {buttonText}
         </button>
       </nav>
-      <ModalCreateItem
-        active={createModalActive}
-        setActive={setCreateModalActive}
-      />
+      <ModalCreateItem active={isModalActive} setActive={setIsModalActive} />
     </header>
   );
 };
