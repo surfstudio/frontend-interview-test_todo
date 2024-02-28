@@ -15,8 +15,8 @@ export const ModalDropdown: React.FC<ModalDropdownProps> = ({
   selected,
   setSelected,
 }) => {
-  const [isActive, setIsActive] = useState(false),
-    options = useSelector(selectAllCategories);
+  const [isActive, setIsActive] = useState(false);
+  const options = useSelector(selectAllCategories);
 
   return (
     <div className="dropdown" onClick={() => setIsActive(!isActive)}>

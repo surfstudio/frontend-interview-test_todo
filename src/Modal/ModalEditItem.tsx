@@ -29,12 +29,12 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = ({
   active,
   setActive,
 }) => {
-  const dispatch = useDispatch(),
-    { pathname } = useLocation(),
-    isCategories = pathname.includes("categories"),
-    [name, setName] = useState(item.name),
-    [selected, setSelected] = useState(item.category || ""),
-    [description, setDescription] = useState(item.description);
+  const dispatch = useDispatch();
+  const { pathname } = useLocation();
+  const isCategories = pathname.includes("categories");
+  const [name, setName] = useState(item.name);
+  const [selected, setSelected] = useState(item.category || "");
+  const [description, setDescription] = useState(item.description);
 
   return (
     <Modal item={item} active={active} setActive={setActive}>

@@ -26,10 +26,10 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
   active,
   setActive,
 }) => {
-  const dispatch = useDispatch(),
-    { pathname } = useLocation(),
-    isCategories = pathname.includes("categories"),
-    text = `Вы уверены, что хотите удалить задачу "${item.name}"?`;
+  const dispatch = useDispatch();
+  const { pathname } = useLocation();
+  const isCategories = pathname.includes("categories");
+  const text = `Вы уверены, что хотите удалить задачу "${item.name}"?`;
 
   return (
     <Modal item={item} active={active} setActive={setActive}>

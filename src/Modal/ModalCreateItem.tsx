@@ -22,12 +22,12 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
   active,
   setActive,
 }) => {
-  const dispatch = useDispatch(),
-    { pathname } = useLocation(),
-    isCategories = pathname.includes("categories"),
-    [name, setName] = useState(""),
-    [selected, setSelected] = useState(""),
-    [description, setDescription] = useState("");
+  const dispatch = useDispatch();
+  const { pathname } = useLocation();
+  const isCategories = pathname.includes("categories");
+  const [name, setName] = useState("");
+  const [selected, setSelected] = useState("");
+  const [description, setDescription] = useState("");
 
   function clearState() {
     setName("");
