@@ -1,3 +1,5 @@
+import "./ModalText.css";
+
 interface ModalTextProps {
   text: string;
 }

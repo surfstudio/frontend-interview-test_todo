@@ -1,4 +1,7 @@
+import { useLocation } from "react-router-dom";
 import important from "../../../icons/important.svg";
+
+import "./ModalInput.css";
 
 interface ModalInputProps {
   name: string;
@@ -9,16 +12,20 @@ interface ModalInputProps {
 export const ModalInput: React.FC<ModalInputProps> = (props) => {
   const { name, setName, size } = props;
 
+  const { pathname } = useLocation();
+  const isCategories = pathname.includes("categories");
+
+  const placeholder = isCategories ? "категории" : "задачи";
+
+  const isLarge = size === "large";
+
   return (
     <div
-      className={
-        size === "large" ? "modalinput-wrapper large" : "modalinput-wrapper"
-      }
+      className={isLarge ? "modalinput-wrapper large" : "modalinput-wrapper"}
     >
       <input
-        id="modalinput"
         className="modalinput"
-        placeholder="Введите имя задачи/категории"
+        placeholder={`Введите имя ${placeholder}`}
         value={name}
         onChange={(e) => setName(e.target.value)}
       />

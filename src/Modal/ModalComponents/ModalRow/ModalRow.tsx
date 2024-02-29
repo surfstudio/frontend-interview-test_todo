@@ -1,6 +1,8 @@
 import { ModalInput } from "../ModalInput/ModalInput";
 import { ModalDropdown } from "../ModalDropdown/ModalDropdown";
 
+import "./ModalRow.css";
+
 interface ModalRowProps {
   name: string;
   setName: React.Dispatch<React.SetStateAction<string>>;
