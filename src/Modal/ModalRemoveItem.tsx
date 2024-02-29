@@ -3,48 +3,51 @@ import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
-import { Modal } from "./Modal";
+import { DefaultModalProps, Modal } from "./Modal";
 import { ModalHeader } from "./ModalComponents/ModalHeader/ModalHeader";
 import { ModalText } from "./ModalComponents/ModalText/ModalText";
 import { ModalFooter } from "./ModalComponents/ModalFooter/ModalFooter";
 import { tasksRemoved, tasksClearedCategories } from "../features/tasksSlice";
 import { categoriesRemoved } from "../features/categoriesSlice";
+import { ItemProps } from "../Lists/ListItem";
 
-interface ModalRemoveItemProps {
-  item: {
-    id: string;
-    name: string;
-    description: string;
-    category?: string;
-  };
-  active: boolean;
-  setActive: React.Dispatch<React.SetStateAction<boolean>>;
+interface ModalRemoveItemProps extends DefaultModalProps {
+  item: ItemProps;
 }
 
 export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = (props) => {
-  const { item, active, setActive } = props;
+  const { item, isActive, setIsActive } = props;
 
   const { id, name } = item;
 
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   const isCategories = pathname.includes("categories");
-  const text = `Вы уверены, что хотите удалить задачу "${name}"?`;
+  const titleVariant = isCategories ? "категорию" : "задачу";
+  const headerVariant = isCategories ? " категории" : "задачи";
+  const text = `Вы уверены, что хотите удалить ${titleVariant} "${name}"?`;
+
+  const handleRemoveTask = (id: string) => dispatch(tasksRemoved(id));
+
+  const handleRemoveCategory = (id: string) => {
+    dispatch(categoriesRemoved(id));
+    dispatch(tasksClearedCategories(id));
+  };
 
   return (
-    <Modal isActive={active} setIsActive={setActive}>
-      <ModalHeader setActive={setActive} title={"Удаление задачи"} />
+    <Modal isActive={isActive} setIsActive={setIsActive}>
+      <ModalHeader
+        setActive={setIsActive}
+        title={`Удаление ${headerVariant}`}
+      />
       <ModalText text={text} />
       <ModalFooter
-        setActive={setActive}
+        setActive={setIsActive}
         submitBtnText="Да"
         onSubmit={
           isCategories
-            ? () => {
-                dispatch(categoriesRemoved(id));
-                dispatch(tasksClearedCategories(id));
-              }
-            : () => dispatch(tasksRemoved(id))
+            ? () => handleRemoveCategory(id)
+            : () => handleRemoveTask(id)
         }
       />
     </Modal>

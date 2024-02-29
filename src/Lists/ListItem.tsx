@@ -28,7 +28,9 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
   const [isRemoveModalActive, setIsRemoveModalActive] =
     useState<boolean>(false);
 
-  const currentCategory = categories.find((item) => item.id === category)?.name;
+  const currentCategory = categories.find(
+    (element) => element.id === category
+  )?.name;
 
   const handleEdit = () => {
     setIsEditModalActive(true);
@@ -40,6 +42,18 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
 
   return (
     <>
+      <ModalEditItem
+        item={item}
+        isActive={isEditModalActive}
+        setIsActive={setIsEditModalActive}
+      />
+
+      <ModalRemoveItem
+        item={item}
+        isActive={isRemoveModalActive}
+        setIsActive={setIsRemoveModalActive}
+      />
+
       <li className="list-item">
         <div className="list-item-col1">
           <div className="list-item-col1-row1">
@@ -60,16 +74,6 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
             <img src={remove} alt="remove" />
           </button>
         </div>
-        <ModalEditItem
-          item={item}
-          active={isEditModalActive}
-          setActive={setIsEditModalActive}
-        />
-        <ModalRemoveItem
-          item={item}
-          active={isRemoveModalActive}
-          setActive={setIsRemoveModalActive}
-        />
       </li>
     </>
   );

@@ -46,7 +46,10 @@ export const Header = () => {
           {buttonText}
         </button>
       </nav>
-      <ModalCreateItem active={isModalActive} setActive={setIsModalActive} />
+      <ModalCreateItem
+        isActive={isModalActive}
+        setIsActive={setIsModalActive}
+      />
     </header>
   );
 };

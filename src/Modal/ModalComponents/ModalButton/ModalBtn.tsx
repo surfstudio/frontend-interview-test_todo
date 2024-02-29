@@ -5,19 +5,18 @@ interface ModalBtnProps {
   children: React.ReactNode;
   size?: string;
   onClick: () => void;
+  isDisabled?: boolean;
 }
 
 export const ModalBtn: React.FC<ModalBtnProps> = (props) => {
-  const { type, children, size, onClick } = props;
+  const { type, children, size, onClick, isDisabled } = props;
 
-  const btnClass =
-    type === "primary"
-      ? size === "large"
-        ? "modalbtn primary large"
-        : "modalbtn primary"
-      : "modalbtn";
+  const btnClass = isDisabled
+    ? `modalbtn ${size}`.trim()
+    : `modalbtn ${type} ${size}`.trim();
+
   return (
-    <button className={btnClass} onClick={onClick}>
+    <button onClick={onClick} className={btnClass} disabled={isDisabled}>
       {children}
     </button>
   );

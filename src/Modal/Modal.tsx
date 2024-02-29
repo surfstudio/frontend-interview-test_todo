@@ -4,9 +4,12 @@ import React from "react";
 /* APPLICATION */
 import "./Modal.css";
 
-interface ModalProps {
+export interface DefaultModalProps {
   isActive: boolean;
   setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+interface ModalProps extends DefaultModalProps {
   children: React.ReactNode;
   clearState?(): void;
 }

@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 /* APPLICATION */
 import down from "../../../icons/down.svg";
 import { selectAllCategories } from "../../../features/categoriesSlice";
+import "./ModalDropdown.css";
 
 interface ModalDropdownProps {
   selected: string | undefined;
@@ -18,28 +19,41 @@ export const ModalDropdown: React.FC<ModalDropdownProps> = ({
   const [isActive, setIsActive] = useState<boolean>(false);
   const options = useSelector(selectAllCategories);
 
+  const currentOption =
+    options.find((option) => option.id === selected)?.name ||
+    "Выберите категорию";
+
+  const handleOpen = () => setIsActive(!isActive);
+
+  const handleClick = (id: string) => {
+    setSelected(id);
+    setIsActive(false);
+  };
+
   return (
-    <div className="dropdown" onClick={() => setIsActive(!isActive)}>
+    <div className="dropdown" onClick={handleOpen}>
       <span className="dropdown-label">Категория</span>
       <div className={selected ? "dropdown-btn" : "dropdown-btn placeholder"}>
-        {options.find((option) => option.id === selected)?.name ||
-          "Выберите категорию"}
+        {currentOption}
         <img src={down} alt="open dropdown" />
       </div>
       {isActive && (
         <div className="dropdown-content">
-          {options.map((option) => (
-            <div
-              className="dropdown-item"
-              onClick={() => {
-                setSelected(option.id);
-                setIsActive(false);
-              }}
-              key={option.id}
-            >
-              {option.name}
-            </div>
-          ))}
+          {options.map((option) => {
+            const { id, name } = option;
+
+            return (
+              <div
+                className={
+                  selected === id ? "dropdown-item-selected" : "dropdown-item"
+                }
+                onClick={() => handleClick(id)}
+                key={id}
+              >
+                {name}
+              </div>
+            );
+          })}
         </div>
       )}
     </div>
