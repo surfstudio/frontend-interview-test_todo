@@ -1,5 +1,4 @@
 /* VENDOR */
-import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
@@ -10,6 +9,7 @@ import { ModalFooter } from "./ModalComponents/ModalFooter/ModalFooter";
 import { tasksRemoved, tasksClearedCategories } from "../features/tasksSlice";
 import { categoriesRemoved } from "../features/categoriesSlice";
 import { ItemProps } from "../Lists/ListItem";
+import { useAppDispatch } from "../app/hooks";
 
 interface ModalRemoveItemProps extends DefaultModalProps {
   item: ItemProps;
@@ -20,7 +20,7 @@ export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = (props) => {
 
   const { id, name } = item;
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { pathname } = useLocation();
   const isCategories = pathname.includes("categories");
   const titleVariant = isCategories ? "категорию" : "задачу";

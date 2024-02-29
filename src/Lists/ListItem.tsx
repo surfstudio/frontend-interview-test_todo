@@ -1,6 +1,5 @@
 /* VENDOR */
 import { useState } from "react";
-import { useSelector } from "react-redux";
 
 /* APPLICATION */
 import edit from "../icons/edit.svg";
@@ -9,6 +8,7 @@ import { selectAllCategories } from "../features/categoriesSlice";
 import { ModalEditItem } from "../Modal/ModalEditItem";
 import { ModalRemoveItem } from "../Modal/ModalRemoveItem";
 import "./List.css";
+import { useAppSelector } from "../app/hooks";
 
 export interface ItemProps {
   id: string;
@@ -23,7 +23,7 @@ interface ListItemProps {
 
 export const ListItem: React.FC<ListItemProps> = ({ item }) => {
   const { name, description, category } = item;
-  const categories = useSelector(selectAllCategories);
+  const categories = useAppSelector(selectAllCategories);
   const [isEditModalActive, setIsEditModalActive] = useState<boolean>(false);
   const [isRemoveModalActive, setIsRemoveModalActive] =
     useState<boolean>(false);

@@ -1,6 +1,5 @@
 /* VENDOR */
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
@@ -13,6 +12,7 @@ import { ModalFooter } from "./ModalComponents/ModalFooter/ModalFooter";
 import { tasksUpdated } from "../features/tasksSlice";
 import { categoriesUpdated } from "../features/categoriesSlice";
 import { ItemProps } from "../Lists/ListItem";
+import { useAppDispatch } from "../app/hooks";
 
 interface ModalEditItemProps extends DefaultModalProps {
   item: ItemProps;
@@ -28,7 +28,7 @@ export const ModalEditItem: React.FC<ModalEditItemProps> = (props) => {
     id,
   } = item;
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { pathname } = useLocation();
   const isCategories = pathname.includes("categories");
 

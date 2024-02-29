@@ -3,16 +3,16 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
 /* APPLICATION */
-import { RootState } from "../app/store";
+import { RootState } from "../app/store/store";
 
-export interface CategoriesState {
+export interface TaskState {
   id: string;
   name: string;
   description: string;
   category: string;
 }
 
-const initialState: CategoriesState[] = [
+const initialState: TaskState[] = [
   {
     id: "dcf6c7ea-56fe-4e36-960b-686ebf86d651",
     name: "Задача",
@@ -37,13 +37,13 @@ export const tasksSlice = createSlice({
   name: "tasks",
   initialState,
   reducers: {
-    tasksAdded: (state, action) => {
+    tasksAdded: (state, action: PayloadAction<Omit<TaskState, "id">>) => {
       state.push({
         id: uuidv4(),
         ...action.payload,
       });
     },
-    tasksUpdated: (state, action) => {
+    tasksUpdated: (state, action: PayloadAction<TaskState>) => {
       const { id, name, description, category } = action.payload,
         existingTask = state.find((task) => task.id === id);
 
@@ -53,16 +53,17 @@ export const tasksSlice = createSlice({
         existingTask.category = category;
       }
     },
-    tasksRemoved: (state, action) => {
-      let rm = (el: CategoriesState, i: number, arr: CategoriesState[]) =>
-          el.id === action.payload,
+    tasksRemoved: (state, action: PayloadAction<TaskState["id"]>) => {
+      let rm = (el: TaskState) => el.id === action.payload,
         rmTaskIndex = state.findIndex(rm);
 
       state.splice(rmTaskIndex, 1);
     },
     tasksClearedCategories: (state, action) => {
-      state.map((task) => {
-        if (task.category === action.payload) task.category = "";
+      state.forEach((task) => {
+        if (task.category === action.payload) {
+          task.category = "";
+        }
       });
     },
   },
