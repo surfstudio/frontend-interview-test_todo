@@ -21,6 +21,16 @@
   background-color: #3f72af;
 }
 
+.modalbtn:disabled {
+  color: #a0a0a0;
+  border: 2px solid #a0a0a0;
+  cursor: not-allowed;
+}
+
+.modalbtn.large {
+  width: 200px;
+}
+
 .modalbtn.primary.large {
   width: 200px;
 }

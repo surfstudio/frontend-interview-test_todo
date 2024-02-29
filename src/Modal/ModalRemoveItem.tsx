@@ -1,50 +1,53 @@
 /* VENDOR */
-import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
-import { Modal } from "./Modal";
-import { ModalHeader } from "./ModalHeader";
-import { ModalText } from "./ModalText";
-import { ModalFooter } from "./ModalFooter";
+import { DefaultModalProps, Modal } from "./Modal";
+import { ModalHeader } from "./ModalComponents/ModalHeader/ModalHeader";
+import { ModalText } from "./ModalComponents/ModalText/ModalText";
+import { ModalFooter } from "./ModalComponents/ModalFooter/ModalFooter";
 import { tasksRemoved, tasksClearedCategories } from "../features/tasksSlice";
 import { categoriesRemoved } from "../features/categoriesSlice";
+import { ItemProps } from "../Lists/ListItem";
+import { useAppDispatch } from "../app/hooks";
 
-interface ModalRemoveItemProps {
-  item: {
-    id: string;
-    name: string;
-    description: string;
-    category?: string;
-  };
-  active: boolean;
-  setActive: React.Dispatch<React.SetStateAction<boolean>>;
+interface ModalRemoveItemProps extends DefaultModalProps {
+  item: ItemProps;
 }
 
-export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = ({
-  item,
-  active,
-  setActive,
-}) => {
-  const dispatch = useDispatch(),
-    { pathname } = useLocation(),
-    isCategories = pathname.includes("categories"),
-    text = `Вы уверены, что хотите удалить задачу "${item.name}"?`;
+export const ModalRemoveItem: React.FC<ModalRemoveItemProps> = (props) => {
+  const { item, isActive, setIsActive } = props;
+
+  const { id, name } = item;
+
+  const dispatch = useAppDispatch();
+  const { pathname } = useLocation();
+  const isCategories = pathname.includes("categories");
+  const titleVariant = isCategories ? "категорию" : "задачу";
+  const headerVariant = isCategories ? " категории" : "задачи";
+  const text = `Вы уверены, что хотите удалить ${titleVariant} "${name}"?`;
+
+  const handleRemoveTask = (id: string) => dispatch(tasksRemoved(id));
+
+  const handleRemoveCategory = (id: string) => {
+    dispatch(categoriesRemoved(id));
+    dispatch(tasksClearedCategories(id));
+  };
 
   return (
-    <Modal item={item} active={active} setActive={setActive}>
-      <ModalHeader setActive={setActive} title={"Удаление задачи"} />
+    <Modal isActive={isActive} setIsActive={setIsActive}>
+      <ModalHeader
+        setActive={setIsActive}
+        title={`Удаление ${headerVariant}`}
+      />
       <ModalText text={text} />
       <ModalFooter
-        setActive={setActive}
+        setActive={setIsActive}
         submitBtnText="Да"
         onSubmit={
           isCategories
-            ? () => {
-                dispatch(categoriesRemoved(item.id));
-                dispatch(tasksClearedCategories(item.id));
-              }
-            : () => dispatch(tasksRemoved(item.id))
+            ? () => handleRemoveCategory(id)
+            : () => handleRemoveTask(id)
         }
       />
     </Modal>

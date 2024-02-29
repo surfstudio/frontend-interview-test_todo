@@ -1,5 +1,7 @@
-import { ModalInput } from "./ModalInput";
-import { ModalDropdown } from "./ModalDropdown";
+import { ModalInput } from "../ModalInput/ModalInput";
+import { ModalDropdown } from "../ModalDropdown/ModalDropdown";
+
+import "./ModalRow.css";
 
 interface ModalRowProps {
   name: string;
@@ -8,12 +10,9 @@ interface ModalRowProps {
   setSelected: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const ModalRow: React.FC<ModalRowProps> = ({
-  name,
-  setName,
-  selected,
-  setSelected,
-}) => {
+export const ModalRow: React.FC<ModalRowProps> = (props) => {
+  const { name, setName, selected, setSelected } = props;
+
   return (
     <div className="modal__content_row">
       <ModalInput name={name} setName={setName} />

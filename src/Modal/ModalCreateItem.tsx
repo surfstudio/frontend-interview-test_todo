@@ -1,46 +1,56 @@
 /* VENDOR */
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 /* APPLICATION */
-import { Modal } from "./Modal";
-import { ModalHeader } from "./ModalHeader";
-import { ModalInput } from "./ModalInput";
-import { ModalRow } from "./ModalRow";
-import { ModalTextarea } from "./ModalTextarea";
-import { ModalFooter } from "./ModalFooter";
+import { DefaultModalProps, Modal } from "./Modal";
+import { ModalHeader } from "./ModalComponents/ModalHeader/ModalHeader";
+import { ModalInput } from "./ModalComponents/ModalInput/ModalInput";
+import { ModalRow } from "./ModalComponents/ModalRow/ModalRow";
+import { ModalTextarea } from "./ModalComponents/ModalTextarea/ModalTextarea";
+import { ModalFooter } from "./ModalComponents/ModalFooter/ModalFooter";
 import { tasksAdded } from "../features/tasksSlice";
 import { categoriesAdded } from "../features/categoriesSlice";
+import { useAppDispatch } from "../app/hooks";
 
-interface ModalCreateItemProps {
-  active: boolean;
-  setActive: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
-  active,
-  setActive,
+export const ModalCreateItem: React.FC<DefaultModalProps> = ({
+  isActive,
+  setIsActive,
 }) => {
-  const dispatch = useDispatch(),
-    { pathname } = useLocation(),
-    isCategories = pathname.includes("categories"),
-    [name, setName] = useState(""),
-    [selected, setSelected] = useState(""),
-    [description, setDescription] = useState("");
+  const dispatch = useAppDispatch();
+  const { pathname } = useLocation();
+  const isCategories = pathname.includes("categories");
+
+  const [name, setName] = useState<string>("");
+  const [category, setCategory] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+
+  const headerTitle = isCategories ? "Создание категории" : "Создание задачи";
 
   function clearState() {
     setName("");
     setDescription("");
-    setSelected("");
+    setCategory("");
   }
 
+  const handleAdd = () => {
+    isCategories
+      ? dispatch(categoriesAdded({ name, description }))
+      : dispatch(tasksAdded({ name, description, category }));
+    clearState();
+    setIsActive(false);
+  };
+
   return (
-    <Modal active={active} setActive={setActive} clearState={clearState}>
+    <Modal
+      isActive={isActive}
+      setIsActive={setIsActive}
+      clearState={clearState}
+    >
       <ModalHeader
         clearState={clearState}
-        setActive={setActive}
-        title={isCategories ? "Создание категории" : "Создание задачи"}
+        setActive={setIsActive}
+        title={headerTitle}
       />
       {isCategories ? (
         <ModalInput name={name} setName={setName} size="large" />
@@ -48,8 +58,8 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
         <ModalRow
           name={name}
           setName={setName}
-          selected={selected}
-          setSelected={setSelected}
+          selected={category}
+          setSelected={setCategory}
         />
       )}
       <ModalTextarea
@@ -57,27 +67,12 @@ export const ModalCreateItem: React.FC<ModalCreateItemProps> = ({
         setDescription={setDescription}
       />
       <ModalFooter
-        setActive={setActive}
+        setActive={setIsActive}
         clearState={clearState}
         submitBtnText="Создать"
         size="large"
-        onSubmit={
-          name
-            ? () => {
-                dispatch(
-                  isCategories
-                    ? categoriesAdded({ name, description })
-                    : tasksAdded({
-                        name,
-                        description,
-                        category: setSelected,
-                      })
-                );
-                clearState();
-                setActive(false);
-              }
-            : () => {}
-        }
+        isDisabled={!name}
+        onSubmit={name ? handleAdd : () => null}
       />
     </Modal>
   );
